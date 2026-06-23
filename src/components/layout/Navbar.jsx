@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const prevLocationRef = useRef(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,8 +18,12 @@ const Navbar = () => {
 
   // Close mobile menu on route change
   useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location]);
+    if (prevLocationRef.current !== location.pathname) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setMobileMenuOpen(false);
+      prevLocationRef.current = location.pathname;
+    }
+  }, [location.pathname]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -42,22 +47,24 @@ const Navbar = () => {
             ? 'py-4 bg-[#07080C]/95 backdrop-blur-[20px] border-b border-white/10'
             : 'py-6 md:py-8'
         }`}
+        aria-label="Main navigation"
       >
         <div className="container mx-auto px-5 max-w-[1200px] flex justify-between items-center">
           <Link
             to="/"
             className="font-['Space_Grotesk'] text-[2.2rem] font-medium tracking-[2px] text-[var(--text-main)] uppercase no-underline"
+            aria-label="A.T.S Home"
           >
             <span className="notranslate">A.T.<span style={{color:'#6366F1'}} className="font-normal">S</span></span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-8 items-center">
+          <ul className="hidden md:flex gap-8 items-center list-none m-0 p-0">
             {navLinks.map(link => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`text-[0.8rem] uppercase tracking-[1.5px] font-medium transition-colors duration-300 no-underline ${
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  className={`text-[0.8rem] uppercase tracking-[1.5px] font-medium transition-colors duration-300 no-underline ${
                   location.pathname === link.to
                     ? 'text-[var(--accent-primary)]'
                     : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
@@ -65,8 +72,9 @@ const Navbar = () => {
               >
                 {link.label}
               </Link>
+              </li>
             ))}
-          </div>
+          </ul>
 
           <a
             href="/contact"

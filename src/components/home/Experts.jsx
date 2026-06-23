@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 const Experts = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -53,11 +53,13 @@ const Experts = () => {
 
   const extendedExperts = [...experts, ...experts.slice(0, itemsPerView)];
 
-  const nextSlide = () => {
-    if (activeSlide >= experts.length) return;
+  const nextSlide = useCallback(() => {
+    setActiveSlide(prev => {
+      if (prev >= experts.length) return prev;
+      return prev + 1;
+    });
     setIsTransitioning(true);
-    setActiveSlide(prev => prev + 1);
-  };
+  }, [experts.length]);
   
   const prevSlide = () => {
     if (activeSlide === 0) {
@@ -92,7 +94,7 @@ const Experts = () => {
       }
     }, 4000);
     return () => clearInterval(interval);
-  }, [activeSlide, experts.length]);
+  }, [nextSlide]);
 
   return (
     <section id="experts" style={{ padding: '120px 0', background: '#0E1117', borderTop: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}>
