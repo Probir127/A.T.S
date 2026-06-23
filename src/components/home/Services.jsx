@@ -82,14 +82,12 @@ const SERVICES = [
     id: 'ai',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="6" cy="9" r="2"/>
-        <circle cx="18" cy="9" r="2"/>
-        <circle cx="12" cy="18" r="2"/>
-        <path d="M6 11v3.5"/>
-        <path d="M18 11v3.5"/>
-        <path d="M8 13.5h8"/>
-        <path d="M6 14l4 2"/>
-        <path d="M18 14l-4 2"/>
+        <path d="M6 8a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v2H6V8z"/>
+        <rect x="4" y="10" width="16" height="8" rx="1"/>
+        <circle cx="8" cy="14" r="0.5" fill="currentColor"/>
+        <circle cx="12" cy="14" r="0.5" fill="currentColor"/>
+        <circle cx="16" cy="14" r="0.5" fill="currentColor"/>
+        <path d="M6 20h12"/>
       </svg>
     ),
     title: 'AI Integration & Automation',
