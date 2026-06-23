@@ -153,7 +153,7 @@ const Services = () => {
           }}
         >
           {SERVICES.map((svc) => (
-            <ServiceCard key={svc.id} svc={svc} isAI={svc.id === 'ai'} />
+            <ServiceCard key={svc.id} svc={svc} />
           ))}
         </div>
 
@@ -189,7 +189,7 @@ const Services = () => {
   );
 };
 
-const ServiceCard = ({ svc, isAI }) => {
+const ServiceCard = ({ svc }) => {
   return (
     <div
       style={{
