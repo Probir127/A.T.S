@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useCurrency } from '../../contexts/CurrencyContext';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { currency, setCurrency } = useCurrency();
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,16 +39,16 @@ const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ${
           scrolled
-            ? 'py-4 bg-[#0b0c10]/95 backdrop-blur-[20px] border-b border-white/10'
+            ? 'py-4 bg-[#07080C]/95 backdrop-blur-[20px] border-b border-white/10'
             : 'py-6 md:py-8'
         }`}
       >
         <div className="container mx-auto px-5 max-w-[1200px] flex justify-between items-center">
           <Link
             to="/"
-            className="font-['Bebas_Neue'] text-[2.2rem] font-medium tracking-[2px] text-[var(--text-main)] uppercase no-underline"
+            className="font-['Space_Grotesk'] text-[2.2rem] font-medium tracking-[2px] text-[var(--text-main)] uppercase no-underline"
           >
-            <span className="notranslate">Grown<span className="text-[#F5A623] font-normal">K</span></span>
+            <span className="notranslate">A.T.<span style={{color:'#6366F1'}} className="font-normal">S</span></span>
           </Link>
 
           {/* Desktop Nav */}
@@ -62,40 +59,21 @@ const Navbar = () => {
                 to={link.to}
                 className={`text-[0.8rem] uppercase tracking-[1.5px] font-medium transition-colors duration-300 no-underline ${
                   location.pathname === link.to
-                    ? 'text-[var(--accent-gold)]'
+                    ? 'text-[var(--accent-primary)]'
                     : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            
-            {/* Currency Pill Toggle */}
-            <div className="flex bg-[rgba(255,255,255,0.05)] rounded-full border border-[rgba(255,255,255,0.1)] p-0.5">
-              <button 
-                onClick={() => setCurrency('BDT')}
-                className={`text-[0.7rem] px-3.5 py-1 rounded-full font-bold tracking-[1px] transition-all duration-300 ${currency === 'BDT' ? 'bg-[var(--accent-gold)] text-black' : 'text-[var(--text-muted)] hover:text-white bg-transparent'}`}
-              >
-                BDT
-              </button>
-              <button 
-                onClick={() => setCurrency('USD')}
-                className={`text-[0.7rem] px-3.5 py-1 rounded-full font-bold tracking-[1px] transition-all duration-300 ${currency === 'USD' ? 'bg-[var(--accent-gold)] text-black' : 'text-[var(--text-muted)] hover:text-white bg-transparent'}`}
-              >
-                USD
-              </button>
-            </div>
-            
-
           </div>
 
           <a
-            href="https://wa.me/8801611510192"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-block bg-transparent text-[#F5A623] text-[0.75rem] px-7 py-3.5 tracking-[1.5px] uppercase font-semibold border border-[#F5A623] shadow-[0_0_10px_rgba(245,166,35,0.2)] rounded-md transition-all duration-300 hover:bg-[#F5A623] hover:text-[#0b0c10] hover:shadow-[0_0_20px_rgba(245,166,35,0.5)] active:scale-95 no-underline"
+            href="/contact"
+            className="hidden md:inline-flex btn-primary no-underline"
+            style={{padding:'10px 24px', fontSize:'0.75rem'}}
           >
-            Start Your Chapter
+            Get In Touch
           </a>
 
           {/* Mobile Hamburger */}
@@ -126,7 +104,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-[#0b0c10]/98 backdrop-blur-[20px] z-[1050] flex flex-col items-center justify-center transition-all duration-300 ${
+        className={`fixed inset-0 bg-[#07080C]/98 backdrop-blur-[20px] z-[1050] flex flex-col items-center justify-center transition-all duration-300 ${
           mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
@@ -136,9 +114,9 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block font-['Bebas_Neue'] text-[clamp(2rem,7vw,3rem)] uppercase py-3 transition-all duration-300 no-underline ${
+              className={`block font-['Space_Grotesk'] text-[clamp(2rem,7vw,3rem)] uppercase py-3 transition-all duration-300 no-underline ${
                 location.pathname === link.to
-                  ? 'text-[var(--accent-gold)]'
+                  ? 'text-[var(--accent-primary)]'
                   : 'text-[var(--text-muted)] hover:text-[var(--text-main)] active:text-[var(--text-main)]'
               }`}
             >
@@ -146,31 +124,14 @@ const Navbar = () => {
             </Link>
           ))}
           
-          <div className="flex justify-center bg-[rgba(255,255,255,0.05)] rounded-full border border-[rgba(255,255,255,0.1)] p-1 mt-4 mx-auto w-fit">
-            <button 
-              onClick={() => setCurrency('BDT')}
-              className={`text-[1rem] px-6 py-2 rounded-full font-medium tracking-[1px] uppercase transition-all duration-300 ${currency === 'BDT' ? 'bg-[var(--accent-gold)] text-black' : 'text-[var(--text-muted)] hover:text-white bg-transparent'}`}
-            >
-              BDT
-            </button>
-            <button 
-              onClick={() => setCurrency('USD')}
-              className={`text-[1rem] px-6 py-2 rounded-full font-medium tracking-[1px] uppercase transition-all duration-300 ${currency === 'USD' ? 'bg-[var(--accent-gold)] text-black' : 'text-[var(--text-muted)] hover:text-white bg-transparent'}`}
-            >
-              USD
-            </button>
-          </div>
-
-
-
           <a
             href="https://wa.me/8801611510192"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
-            className="mt-6 mx-auto w-full max-w-[320px] inline-flex items-center justify-center uppercase tracking-[1px] text-[0.9rem] font-medium font-['Inter'] transition-all duration-300 bg-[var(--accent-gold)] text-[#0b0c10] border border-[var(--accent-gold)] rounded-lg py-[18px] px-11 hover:bg-white hover:text-black hover:border-white active:scale-95 no-underline"
+            className="mt-6 mx-auto w-full max-w-[320px] inline-flex items-center justify-center uppercase tracking-[1px] text-[0.9rem] font-medium font-['Inter'] transition-all duration-300 bg-[var(--accent-primary)] text-[#07080C] border border-[var(--accent-primary)] rounded-lg py-[18px] px-11 hover:bg-white hover:text-black hover:border-white active:scale-95 no-underline"
           >
-            Start Your Chapter
+            Get In Touch
           </a>
         </div>
       </div>

@@ -3,71 +3,81 @@ import SEO from '../components/SEO';
 
 const ContactPage = () => {
   return (
-    <div className="bg-[#0b0c10] text-[var(--text-main)] min-h-screen pt-32 pb-24">
+    <div style={{ background: '#07080C', minHeight: '100vh', paddingTop: '128px', paddingBottom: '96px' }}>
       <SEO 
         title="Contact Us" 
         description="Strategic guidance is one conversation away. Let's discuss how we can transform your complex business into a compelling narrative." 
         path="/contact" 
       />
-      <div className="max-w-[1200px] mx-auto px-[5%]">
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+        
         {/* Header */}
-        <div className="mb-16">
-          <p className="text-[0.75rem] uppercase tracking-[4px] text-[var(--accent-gold)] mb-6 font-semibold font-['Inter']">Get In Touch</p>
-          <h1 className="font-['Bebas_Neue'] text-[clamp(3rem,8vw,5.5rem)] leading-none uppercase tracking-[1px] mb-6">
-            Contact <span className="text-[var(--accent-gold)]">Us</span>
+        <div style={{ marginBottom: '80px', textAlign: 'center' }}>
+          <div className="overline" style={{ marginBottom: '24px' }}>Start a conversation</div>
+          <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 'clamp(3rem, 8vw, 5.5rem)', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em', color: '#F0F0F0', margin: '0 0 24px 0' }}>
+            Contact <span className="text-gradient-signature">Us</span>
           </h1>
-          <p className="text-[clamp(1rem,2vw,1.3rem)] text-[var(--text-muted)] leading-[1.7] max-w-[600px]">
-            Strategic guidance is one conversation away. Let's discuss how we can transform your complex business into a compelling narrative.
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.125rem', lineHeight: 1.7, color: '#94A3B8', maxWidth: '600px', margin: '0 auto' }}>
+            Strategic guidance is one conversation away. Let's discuss how we can engineer your next digital platform.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+          
           {/* Contact Info */}
-          <div className="flex flex-col gap-8">
-            <div className="p-8 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
-              <h3 className="font-['Bebas_Neue'] text-[1.8rem] tracking-[1px] mb-2">Direct Inquiry</h3>
-              <a href="mailto:agency.grownk@gmail.com" className="text-[var(--accent-gold)] text-lg hover:underline">
-                agency.grownk@gmail.com
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            <div className="card-ats" style={{ padding: '40px', borderRadius: '16px', background: '#0E1117' }}>
+              <div className="overline" style={{ marginBottom: '16px' }}>Direct Inquiry</div>
+              <a href="mailto:Studio.A.T.S@gmail.com" style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.5rem', fontWeight: 600, color: '#6366F1', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color = '#818CF8'} onMouseLeave={e => e.target.style.color = '#6366F1'}>
+                Studio.A.T.S@gmail.com
               </a>
             </div>
 
-            <div className="p-8 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
-              <h3 className="font-['Bebas_Neue'] text-[1.8rem] tracking-[1px] mb-2">Office</h3>
-              <p className="text-[var(--text-muted)] leading-relaxed">
+            <div className="card-ats" style={{ padding: '40px', borderRadius: '16px', background: '#0E1117' }}>
+              <div className="overline" style={{ marginBottom: '16px' }}>Office</div>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.125rem', lineHeight: 1.6, color: '#94A3B8', margin: 0 }}>
                 House: 02, Block: B, Road: 04,<br />
                 Banasree, Rampura, Dhaka 1219
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
-              <h3 className="font-['Bebas_Neue'] text-[1.8rem] tracking-[1px] mb-2">Follow Us</h3>
-              <div className="flex gap-6 mt-2">
-                <a href="https://www.facebook.com/profile.php?id=61574323077446" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors uppercase text-[0.75rem] tracking-[2px] font-bold">Facebook</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors uppercase text-[0.75rem] tracking-[2px] font-bold">LinkedIn</a>
-                <a href="https://www.instagram.com/grownk_1/" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors uppercase text-[0.75rem] tracking-[2px] font-bold">Instagram</a>
+            <div className="card-ats" style={{ padding: '40px', borderRadius: '16px', background: '#0E1117' }}>
+              <div className="overline" style={{ marginBottom: '16px' }}>Follow Us</div>
+              <div style={{ display: 'flex', gap: '24px' }}>
+                {['Facebook', 'LinkedIn', 'Instagram'].map(platform => (
+                  <a key={platform} href="#" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.875rem', color: '#94A3B8', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={e => e.target.style.color = '#6366F1'} onMouseLeave={e => e.target.style.color = '#94A3B8'}>
+                    {platform}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
 
           {/* WhatsApp CTA */}
-          <div className="flex items-start">
-            <div className="w-full p-10 md:p-14 rounded-2xl border border-[rgba(245,166,35,0.3)] bg-[rgba(10,10,20,0.6)] backdrop-blur-xl text-center shadow-[0_0_60px_rgba(245,166,35,0.1)]">
-              <i className="ph-fill ph-whatsapp-logo text-[4rem] text-[var(--accent-gold)] mb-6 block"></i>
-              <h2 className="font-['Bebas_Neue'] text-[2.5rem] tracking-[1px] text-[var(--text-main)] mb-4">Chat on WhatsApp</h2>
-              <p className="text-[var(--text-muted)] mb-8 max-w-[400px] mx-auto">
-                The fastest way to reach our strategic command. Start a conversation instantly with our team.
-              </p>
-              <a
-                href="https://wa.me/8801611510192"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-3 py-4 px-10 text-[1.1rem] tracking-[1px] font-['Bebas_Neue'] rounded-xl bg-[var(--accent-gold)] text-black border border-[var(--accent-gold)] hover:bg-white hover:text-black hover:border-white transition-all duration-300 active:scale-95 shadow-lg shadow-[rgba(245,166,35,0.1)]"
-              >
-                <i className="ph-bold ph-chat-circle-text"></i>
-                Message on WhatsApp
-              </a>
-            </div>
+          <div className="card-ats" style={{ padding: '64px 40px', borderRadius: '16px', background: '#0E1117', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', top: '0', right: '0', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 70%)', transform: 'translate(30%, -30%)', pointerEvents: 'none' }} />
+            
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="#6366F1" style={{ marginBottom: '32px' }}>
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.51 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.22 13.44 13.86 13.93 13.68 14.14C13.5 14.36 13.32 14.38 13.07 14.27C12.82 14.17 12.05 13.91 11.13 13.1C10.41 12.46 9.90 11.67 9.76 11.43C9.62 11.19 9.73 11.06 9.85 10.94C9.96 10.82 10.10 10.64 10.22 10.5C10.35 10.36 10.39 10.25 10.47 10.07C10.55 9.89 10.51 9.73 10.44 9.61C10.38 9.5 9.9 8.27 9.69 7.79C9.5 7.33 9.29 7.35 9.12 7.34C8.95 7.33 8.78 7.33 8.53 7.33Z"/>
+            </svg>
+            
+            <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '2rem', fontWeight: 600, color: '#F0F0F0', marginBottom: '16px', margin: 0 }}>
+              Chat on WhatsApp
+            </h2>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', lineHeight: 1.6, color: '#94A3B8', marginBottom: '40px', maxWidth: '300px' }}>
+              The fastest way to reach our strategic command. Start a conversation instantly with our team.
+            </p>
+            <a
+              href="https://wa.me/8801611510192"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ padding: '16px 32px', fontSize: '1rem' }}
+            >
+              Message on WhatsApp
+            </a>
           </div>
+
         </div>
       </div>
     </div>

@@ -34,20 +34,20 @@ const Blog = () => {
   ];
 
   return (
-    <div className="bg-[#0b0c10] text-[var(--text-main)] min-h-screen pt-32 pb-24">
+    <div className="bg-[#07080C] text-[var(--text-main)] min-h-screen pt-32 pb-24">
       <SEO 
         title="The Blog - Insights & Strategy" 
-        description="Strategic insights, tactical breakdowns, and growth narratives from the GrownK team." 
+        description="Strategic insights, tactical breakdowns, and growth narratives from the A.T.S team." 
         path="/blog" 
       />
       <div className="max-w-[1200px] mx-auto px-[5%]">
         <div className="mb-16">
-          <p className="text-[0.75rem] uppercase tracking-[4px] text-[var(--accent-gold)] mb-6 font-semibold font-['Inter']">Insights</p>
-          <h1 className="font-['Bebas_Neue'] text-[clamp(3rem,8vw,5.5rem)] leading-none uppercase tracking-[1px] mb-6">
-            The <span className="text-[var(--accent-gold)]">Blog</span>
+          <p className="text-[0.75rem] uppercase tracking-[4px] text-[var(--accent-primary)] mb-6 font-semibold font-['Inter']">Insights</p>
+          <h1 className="font-['Space_Grotesk'] text-[clamp(3rem,8vw,5.5rem)] leading-none uppercase tracking-[1px] mb-6">
+            The <span className="text-[var(--accent-primary)]">Blog</span>
           </h1>
           <p className="text-[clamp(1rem,2vw,1.3rem)] text-[var(--text-muted)] leading-[1.7] max-w-[600px]">
-            Strategic insights, tactical breakdowns, and growth narratives from the GrownK team.
+            Strategic insights, tactical breakdowns, and growth narratives from the A.T.S team.
           </p>
         </div>
 
@@ -55,20 +55,20 @@ const Blog = () => {
           {posts.map((post, i) => (
             <article
               key={i}
-              className="group p-8 md:p-10 rounded-2xl border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] hover:border-[rgba(245,166,35,0.25)] transition-all duration-500 flex flex-col gap-6 cursor-pointer"
+              className="group p-8 md:p-10 rounded-2xl border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] hover:border-[rgba(99,102,241,0.25)] transition-all duration-500 flex flex-col gap-6 cursor-pointer"
             >
               <div className="flex items-center justify-between">
-                <span className="text-[0.7rem] uppercase tracking-[2px] font-bold text-[var(--accent-gold)]">{post.category}</span>
+                <span className="text-[0.7rem] uppercase tracking-[2px] font-bold text-[var(--accent-primary)]">{post.category}</span>
                 <span className="text-[0.75rem] text-[var(--text-dim)]">{post.date}</span>
               </div>
-              <div className="w-14 h-14 rounded-2xl bg-[rgba(245,166,35,0.08)] text-[var(--accent-gold)] flex items-center justify-center text-2xl border border-[rgba(245,166,35,0.1)]">
+              <div className="w-14 h-14 rounded-2xl bg-[rgba(99,102,241,0.08)] text-[var(--accent-primary)] flex items-center justify-center text-2xl border border-[rgba(99,102,241,0.1)]">
                 <i className={post.icon}></i>
               </div>
-              <h2 className="font-['Bebas_Neue'] text-[1.8rem] tracking-[0.5px] leading-tight group-hover:text-[var(--accent-gold)] transition-colors duration-300">
+              <h2 className="font-['Space_Grotesk'] text-[1.8rem] tracking-[0.5px] leading-tight group-hover:text-[var(--accent-primary)] transition-colors duration-300">
                 {post.title}
               </h2>
               <p className="text-[1rem] text-[var(--text-muted)] leading-[1.7]">{post.excerpt}</p>
-              <span className="mt-auto text-[0.8rem] uppercase tracking-[2px] font-bold text-[var(--accent-gold)] group-hover:underline flex items-center gap-2">
+              <span className="mt-auto text-[0.8rem] uppercase tracking-[2px] font-bold text-[var(--accent-primary)] group-hover:underline flex items-center gap-2">
                 Read More <i className="ph-bold ph-arrow-right text-[0.7rem]"></i>
               </span>
             </article>

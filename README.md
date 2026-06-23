@@ -1,29 +1,30 @@
-# 🚀 GrownK — Agency Landing Page
+# 🚀 A.T.S — Ajanta Tech and Studio
 
-Official landing page for **GrownK**, a PR and digital marketing agency. Built as a clean, fast static site and deployed on Cloudflare Pages.
+Official web platform for **A.T.S (Ajanta Tech and Studio)**, a premium software development and creative studio. Built using a modern React + Vite architecture, styled with Tailwind CSS, and powered by GSAP animations.
 
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Cloudflare Pages](https://img.shields.io/badge/Deployed-Cloudflare%20Pages-F38020?style=flat&logo=cloudflare&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Live-success)
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat&logo=greensock&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Rebranded-success)
 
-🔗 **Live Site:** [grownk.pages.dev](https://grownk.pages.dev)
+🔗 **Website:** [ajantatechstudio.com](https://www.ajantatechstudio.com)
 
 ---
 
-## 🏢 About GrownK
+## 🏢 About A.T.S
 
-GrownK is a PR and digital marketing agency offering brand growth, content strategy, and digital presence services. This landing page serves as the agency's primary web presence.
+A.T.S is a modern software development studio operating at the intersection of engineering rigor and design craft. We build high-performance, enterprise-grade web applications, digital platforms, and immersive user interfaces.
 
 ---
 
 ## ✨ Features
 
-- Clean, professional agency landing page
-- Responsive design for mobile and desktop
-- Fast load times via Cloudflare CDN
-- Sections: Hero, Services, About, Contact
+- **Geometric Design System**: Premium dark-mode UI with a midnight obsidian foundation, electric indigo accents, and emerald highlights.
+- **Space Grotesk Typography**: Sleek, tech-forward geometric typeface pairing.
+- **GSAP Scroll Animations**: Sophisticated interactive elements, drawing charts, and parallax effects.
+- **Dual Currency Support**: Dynamic client-side conversion (BDT / USD).
+- **Responsive Layout**: Designed mobile-first for fluid cross-device usage.
 
 ---
 
@@ -31,46 +32,40 @@ GrownK is a PR and digital marketing agency offering brand growth, content strat
 
 | Technology | Purpose |
 |---|---|
-| HTML5 | Page structure |
-| CSS3 | Styling and layout |
-| JavaScript | Interactivity |
-| Cloudflare Pages | Hosting and global CDN delivery |
+| React 18 | Declarative component architecture |
+| Vite | Instant HMR development & build pipeline |
+| Tailwind CSS v4 | High-performance CSS-first utility styling |
+| GSAP & ScrollTrigger | Hardware-accelerated animations |
+| React Router | Client-side routing |
+| Phosphor Icons | Premium icon system |
 
 ---
 
 ## 🚀 Local Development
 
 ```bash
-# Clone the repo
-git clone https://github.com/Probir127/grownk.git
-cd grownk
+# Clone the repository
+git clone https://github.com/Probir127/ats.git
+cd ats
 
-# Open in browser directly
-open index.html
+# Install dependencies
+npm install
 
-# Or serve locally
-npx serve .
+# Start the local development server
+npm run dev
 ```
 
 ---
 
-## 🚢 Deployment (Cloudflare Pages)
+## 🚢 Production Deployment
 
 ```bash
-# Deploy via Wrangler CLI
-npx wrangler pages deploy . --project-name grownk
+# Build the production bundle
+npm run build
+
+# Preview production build locally
+npm run preview
 ```
-
-Or connect the GitHub repo directly to Cloudflare Pages for automatic deploys on every push.
-
----
-
-## 📌 Future Plans
-
-- [ ] Add blog/news section for agency updates
-- [ ] Client testimonials section
-- [ ] Contact form with email integration
-- [ ] Custom domain via Cloudflare Registrar
 
 ---
 
@@ -83,4 +78,4 @@ Or connect the GitHub repo directly to Cloudflare Pages for automatic deploys on
 
 ## 📝 License
 
-All rights reserved © GrownK
+All rights reserved © 2026 Ajanta Tech & Studio

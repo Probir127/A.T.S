@@ -1,81 +1,195 @@
 import React from 'react';
 
-const Process = () => {
-  const steps = [
-    {
-      id: '01',
-      title: 'Discovery',
-      desc: 'We study your business, your customers, and your competitors then identify exactly what your brand needs to say to stand out and be trusted.',
-      icon: 'ph-fill ph-magnifying-glass'
-    },
-    {
-      id: '02',
-      title: 'Strategy & Build',
-      desc: 'We build your complete digital presence website, social media profiles, content plan, and brand identity all designed to attract the right customers from day one.',
-      icon: 'ph-fill ph-git-merge'
-    },
-    {
-      id: '03',
-      title: 'Amplification',
-      desc: 'We push your brand in front of your audience through targeted campaigns, consistent content, and strategic promotion turning visibility into real, measurable sales.',
-      icon: 'ph-fill ph-rocket-launch'
-    }
-  ];
+const STEPS = [
+  {
+    id: '01',
+    title: 'Discover',
+    desc: 'We begin with deep listening — your business context, technical constraints, user needs, and long-term objectives. No assumptions. No templates forced onto your problem.',
+    detail: 'Stakeholder interviews · Technical audit · Competitive analysis',
+  },
+  {
+    id: '02',
+    title: 'Architect',
+    desc: 'We design the system before we write the first line of code. Architecture decisions documented, technology choices reasoned, roadmap set with clear milestones.',
+    detail: 'System design · Wireframes · Tech stack selection',
+  },
+  {
+    id: '03',
+    title: 'Build',
+    desc: 'Iterative delivery in tested, reviewed increments. You see working software early. We validate assumptions continuously rather than delivering a single big reveal.',
+    detail: 'Agile sprints · Code review · Continuous integration',
+  },
+  {
+    id: '04',
+    title: 'Ship',
+    desc: 'Deployment to production is not the end. We monitor, optimize, and support what we build. Knowledge transfer ensures your team owns and understands the system.',
+    detail: 'Deployment · Performance monitoring · Documentation',
+  },
+];
 
+const Process = () => {
   return (
-    <section className="py-24 px-0 relative bg-[var(--bg-dark)] border-t border-[rgba(255,255,255,0.03)]" id="approach">
-      <div className="max-w-[1100px] mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-          
-          {/* Sticky Left Column */}
-          <div className="lg:w-[40%] lg:sticky lg:top-32 lg:h-fit">
-            <p className="text-[0.7rem] uppercase tracking-[4px] text-[var(--accent-gold)] mb-4 font-semibold font-['Inter']">Chapter V</p>
-            <h2 className="font-['Bebas_Neue'] text-[3rem] md:text-[4rem] text-[var(--text-main)] uppercase leading-[0.95] tracking-[1px] mb-6">
-              Writing the <span className="text-gradient-gold">story.</span>
+    <section
+      id="approach"
+      style={{
+        padding: '120px 0',
+        background: '#0E1117',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+      }}
+    >
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+
+        {/* Layout: two columns */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '80px',
+            alignItems: 'start',
+          }}
+          className="lg:grid-cols-2 grid-cols-1"
+        >
+          {/* Left — Sticky Header */}
+          <div style={{ position: 'sticky', top: '120px' }}>
+            <div className="overline" style={{ marginBottom: '20px' }}>
+              How we work
+            </div>
+            <h2
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 'clamp(2rem, 4vw, 2.75rem)',
+                fontWeight: 700,
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
+                color: '#F0F0F0',
+                marginBottom: '24px',
+              }}
+            >
+              Methodical by design.{' '}
+              <span className="text-gradient-signature">Iterative by practice.</span>
             </h2>
-            <p className="max-w-[400px] text-[#aaa] text-[1.05rem] leading-[1.6]">
-              Strategic architecture that moves backwards from your final objective. A systematic three-phase transition.
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '1.0625rem',
+                lineHeight: 1.7,
+                color: '#64748B',
+                maxWidth: '420px',
+              }}
+            >
+              Enterprise software doesn't emerge from chaos. Our process is deliberate —
+              designed to reduce ambiguity and build trust incrementally.
             </p>
+
+            {/* Mono accent detail */}
+            <div
+              style={{
+                marginTop: '40px',
+                padding: '20px',
+                background: '#07080C',
+                border: '1px solid rgba(255,255,255,0.06)',
+                borderRadius: '8px',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '0.8125rem',
+                color: '#64748B',
+                lineHeight: 1.6,
+              }}
+            >
+              <span style={{ color: '#6366F1' }}>// Every project</span><br />
+              <span style={{ color: '#10B981' }}>const</span> approach = <span style={{ color: '#F0F0F0' }}>&#123;</span><br />
+              &nbsp;&nbsp;assumptions: <span style={{ color: '#F59E0B' }}>'challenged'</span>,<br />
+              &nbsp;&nbsp;decisions: <span style={{ color: '#F59E0B' }}>'documented'</span>,<br />
+              &nbsp;&nbsp;quality: <span style={{ color: '#F59E0B' }}>'non-negotiable'</span>,<br />
+              <span style={{ color: '#F0F0F0' }}>&#125;</span>
+            </div>
           </div>
 
-          {/* Right Column - Timeline */}
-          <div className="lg:w-[60%] flex flex-col mt-8 lg:mt-0">
-            {steps.map((step, index) => (
-              <div 
-                key={step.id} 
-                className="group relative flex items-start gap-6 lg:gap-8"
+          {/* Right — Steps */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+            {STEPS.map((step, idx) => (
+              <div
+                key={step.id}
+                style={{
+                  display: 'flex',
+                  gap: '24px',
+                  paddingBottom: idx < STEPS.length - 1 ? '40px' : 0,
+                  position: 'relative',
+                }}
               >
-                {/* Timeline Icon Column */}
-                <div className="flex flex-col items-center h-full">
-                  <div className="w-12 h-12 rounded-full bg-[rgba(245,166,35,0.1)] text-[#F5A623] flex items-center justify-center text-xl border border-[rgba(245,166,35,0.2)] shadow-[0_0_15px_rgba(245,166,35,0.1)] z-10 shrink-0">
-                    <i className={step.icon}></i>
+                {/* Step Number + Line */}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
+                  <div
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: '50%',
+                      background: 'rgba(99,102,241,0.08)',
+                      border: '1px solid rgba(99,102,241,0.25)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: '0.75rem',
+                      color: '#6366F1',
+                      flexShrink: 0,
+                    }}
+                  >
+                    {step.id}
                   </div>
-                  {/* Vertical Line Decoration */}
-                  {index !== steps.length - 1 && (
-                    <div className="w-[1px] h-full min-h-[50px] bg-gradient-to-b from-[#F5A623]/30 to-transparent flex-grow my-4"></div>
+                  {idx < STEPS.length - 1 && (
+                    <div
+                      style={{
+                        width: '1px',
+                        flexGrow: 1,
+                        marginTop: '8px',
+                        background: 'linear-gradient(to bottom, rgba(99,102,241,0.3), transparent)',
+                        minHeight: '40px',
+                      }}
+                    />
                   )}
                 </div>
 
-                {/* Content Column */}
-                <div className={`flex flex-col gap-3 pt-1 ${index !== steps.length - 1 ? 'pb-16' : 'pb-0'}`}>
-                  <div className="flex items-center gap-4">
-                    <span className="font-['Bebas_Neue'] text-[2.5rem] leading-none text-[rgba(245,166,35,0.4)] select-none transition-all duration-300 group-hover:text-[var(--accent-gold)] group-hover:scale-110">
-                      {step.id}
-                    </span>
-                    <h3 className="font-['Bebas_Neue'] text-[1.8rem] text-[var(--text-main)] tracking-[1px] uppercase transition-colors duration-300 group-hover:text-[var(--accent-gold)]">
-                      {step.title}
-                    </h3>
-                  </div>
-                  
-                  <p className="text-[1rem] text-[#aaa] leading-[1.7] m-0 max-w-[480px]">
+                {/* Content */}
+                <div style={{ paddingTop: '8px', paddingBottom: '8px' }}>
+                  <h3
+                    style={{
+                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontSize: '1.375rem',
+                      fontWeight: 600,
+                      color: '#F0F0F0',
+                      marginBottom: '12px',
+                      letterSpacing: '-0.01em',
+                    }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: '0.9375rem',
+                      lineHeight: 1.65,
+                      color: '#64748B',
+                      marginBottom: '12px',
+                    }}
+                  >
                     {step.desc}
                   </p>
+                  <div
+                    style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: '0.75rem',
+                      color: '#10B981',
+                      opacity: 0.8,
+                    }}
+                  >
+                    → {step.detail}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          
         </div>
+
       </div>
     </section>
   );

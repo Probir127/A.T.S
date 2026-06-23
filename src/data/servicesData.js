@@ -11,13 +11,13 @@ export const SVC_DETAILS = {
 };
 
 export const SVC_CLASS = { 
-    manual: 'border-[var(--accent-gold)] shadow-[0_0_40px_rgba(245,166,35,0.08)]', 
-    custom: 'border-[var(--accent-electric)] shadow-[0_0_40px_rgba(245,166,35,0.12)]', 
-    total: 'border-[var(--accent-gold)] shadow-[0_0_50px_rgba(245,166,35,0.15)]', 
-    addon_fbig: 'border-[var(--accent-gold)] shadow-[0_0_40px_rgba(245,166,35,0.08)]',
-    addon_web: 'border-[var(--accent-gold)] shadow-[0_0_40px_rgba(245,166,35,0.08)]',
-    addon_social: 'border-[var(--accent-gold)] shadow-[0_0_40px_rgba(245,166,35,0.08)]',
-    addon_seo: 'border-[var(--accent-gold)] shadow-[0_0_40px_rgba(245,166,35,0.08)]',
-    addon_app: 'border-[var(--accent-gold)] shadow-[0_0_40px_rgba(245,166,35,0.08)]',
-    addon_design: 'border-[var(--accent-gold)] shadow-[0_0_40px_rgba(245,166,35,0.08)]'
+    manual: 'border-[var(--accent-primary)] shadow-[0_0_40px_rgba(124, 58, 237,0.08)]', 
+    custom: 'border-[var(--accent-electric)] shadow-[0_0_40px_rgba(124, 58, 237,0.12)]', 
+    total: 'border-[var(--accent-primary)] shadow-[0_0_50px_rgba(124, 58, 237,0.15)]', 
+    addon_fbig: 'border-[var(--accent-primary)] shadow-[0_0_40px_rgba(124, 58, 237,0.08)]',
+    addon_web: 'border-[var(--accent-primary)] shadow-[0_0_40px_rgba(124, 58, 237,0.08)]',
+    addon_social: 'border-[var(--accent-primary)] shadow-[0_0_40px_rgba(124, 58, 237,0.08)]',
+    addon_seo: 'border-[var(--accent-primary)] shadow-[0_0_40px_rgba(124, 58, 237,0.08)]',
+    addon_app: 'border-[var(--accent-primary)] shadow-[0_0_40px_rgba(124, 58, 237,0.08)]',
+    addon_design: 'border-[var(--accent-primary)] shadow-[0_0_40px_rgba(124, 58, 237,0.08)]'
 };

@@ -9,13 +9,13 @@ const Experts = () => {
       name: "Razu Paul",
       role: "Founder & CEO",
       photo: "/images/WhatsApp-Image-2026-03-16-at-12.39.53-AM.jpeg",
-      desc: "Razu is the driving force behind GrownK's mission to build complete digital ecosystems. His leadership and strategic vision have shaped the agency into a powerhouse for brand transformation."
+      desc: "Razu is the driving force behind A.T.S's mission to build complete digital ecosystems. His leadership and strategic vision have shaped the studio into a powerhouse for digital transformation."
     },
     {
       name: "Probir Saha Shohom",
       role: "Co-Founder & Head of Tech",
       photo: "/images/WhatsApp-Image-2026-03-15-at-8.31.37-PM.jpeg",
-      desc: "Probir leads the technical vision behind every GrownK project. From robust web architectures to seamless application deployment, he ensures every digital ecosystem is built for scale, performance, and premium quality."
+      desc: "Probir leads the technical vision behind every A.T.S project. From robust web architectures to seamless application deployment, he ensures every digital ecosystem is built for scale, performance, and premium quality."
     },
     {
       name: "Mir Sajjad",
@@ -27,13 +27,13 @@ const Experts = () => {
       name: "Sudipto Saha",
       role: "Junior Developer",
       photo: "/images/WhatsApp-Image-2026-03-15-at-8.30.53-PM.jpeg",
-      desc: "Sudipto is a dedicated developer executing the foundational code behind GrownK applications. He supports the technical team by building reliable, performant features and ensuring seamless user experiences."
+      desc: "Sudipto is a dedicated developer executing the foundational code behind A.T.S applications. He supports the technical team by building reliable, performant features and ensuring seamless user experiences."
     },
     {
       name: "Samiya Islam Sadiya",
       role: "Frontend Designer & SEO",
       photo: "/images/WhatsApp-Image-2026-03-15-at-8.57.41-PM.jpeg",
-      desc: "Samiya unites creative interface design with robust SEO strategies. She ensures every GrownK website not only looks visually stunning but also ranks highly and converts visitors into lasting clients."
+      desc: "Samiya unites creative interface design with robust SEO strategies. She ensures every A.T.S platform not only looks visually stunning but also ranks highly and converts visitors into lasting clients."
     }
   ];
 
@@ -51,7 +51,6 @@ const Experts = () => {
 
   const [isTransitioning, setIsTransitioning] = useState(true);
 
-  // Remove totally native dots logic, using extended experts
   const extendedExperts = [...experts, ...experts.slice(0, itemsPerView)];
 
   const nextSlide = () => {
@@ -74,7 +73,6 @@ const Experts = () => {
     }
   };
 
-  // Handle clone snap-back
   useEffect(() => {
     if (activeSlide === experts.length) {
       const timeout = setTimeout(() => {
@@ -87,7 +85,6 @@ const Experts = () => {
 
   const hoverRef = useRef(false);
 
-  // Auto right-to-left circle slider
   useEffect(() => {
     const interval = setInterval(() => {
       if (!hoverRef.current) {
@@ -98,31 +95,59 @@ const Experts = () => {
   }, [activeSlide, experts.length]);
 
   return (
-    <section className="py-24 px-0 relative bg-[#0b0c10] border-t border-[rgba(255,255,255,0.03)] overflow-hidden" id="experts">
-      <div className="max-w-[1200px] mx-auto px-[5%]">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 reveal fade-up">
-          <div className="flex flex-col gap-3">
-            <span className="text-[0.75rem] uppercase tracking-[4px] text-[var(--text-dim)] font-semibold">Strategic Capital</span>
-            <h2 className="font-['Bebas_Neue'] text-[clamp(2.5rem,6vw,4rem)] text-white uppercase leading-none tracking-[1px]">
-              Meet Our <span className="text-[#F5A623]">Experts</span>
+    <section id="experts" style={{ padding: '120px 0', background: '#0E1117', borderTop: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+        
+        {/* Header */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '32px', marginBottom: '72px' }}>
+          <div>
+            <div className="overline" style={{ marginBottom: '20px' }}>Strategic Capital</div>
+            <h2
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 'clamp(2rem, 5vw, 2.75rem)',
+                fontWeight: 700,
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
+                color: '#F0F0F0',
+                margin: 0,
+              }}
+            >
+              Meet Our <span className="text-gradient-signature">Experts</span>
             </h2>
           </div>
-          <div className="flex flex-col md:items-end gap-6">
-            <p className="max-w-[480px] text-[#a8a89a] text-[1.1rem] md:text-right leading-[1.6]">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'flex-start' }}>
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '1.0625rem',
+                lineHeight: 1.7,
+                color: '#94A3B8',
+                maxWidth: '480px',
+                margin: 0,
+              }}
+            >
               The architects behind the ecosystems. Pure strategic horsepower, 
               dedicated to scaling your narrative.
             </p>
             
-            {/* Slider Navigation (Arrows with dots in between) */}
-            <div className="flex items-center gap-4 mt-2">
+            {/* Slider Navigation */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <button 
                 onClick={prevSlide}
-                className="w-10 h-10 rounded-full border border-[rgba(255,255,255,0.15)] bg-[rgba(255,255,255,0.02)] text-white flex items-center justify-center hover:bg-[#F5A623] hover:text-black hover:border-[#F5A623] transition-all duration-300 active:scale-95"
+                style={{
+                  width: '40px', height: '40px', borderRadius: '50%',
+                  border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.02)',
+                  color: '#F0F0F0', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  cursor: 'pointer', transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#6366F1'; e.currentTarget.style.borderColor = '#6366F1'; e.currentTarget.style.color = '#000'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = '#F0F0F0'; }}
               >
-                <i className="ph-bold ph-arrow-left text-lg"></i>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
 
-              <div className="flex gap-2">
+              <div style={{ display: 'flex', gap: '8px' }}>
                 {experts.map((_, idx) => {
                   const isActive = activeSlide === idx || (activeSlide === experts.length && idx === 0);
                   return (
@@ -132,18 +157,29 @@ const Experts = () => {
                         setIsTransitioning(true);
                         setActiveSlide(idx);
                       }}
-                      className={`h-2 rounded-full transition-all duration-300 ${isActive ? 'w-6 bg-[#F5A623]' : 'w-2 bg-[rgba(255,255,255,0.2)] hover:bg-white/50'}`}
+                      style={{
+                        height: '6px', borderRadius: '3px', transition: 'all 0.3s ease', cursor: 'pointer', border: 'none',
+                        width: isActive ? '24px' : '6px',
+                        background: isActive ? '#6366F1' : 'rgba(255,255,255,0.2)',
+                      }}
                       aria-label={`Go to slide ${idx + 1}`}
-                    ></button>
+                    />
                   );
                 })}
               </div>
 
               <button 
                 onClick={nextSlide}
-                className="w-10 h-10 rounded-full border border-[rgba(255,255,255,0.15)] bg-[rgba(255,255,255,0.02)] text-white flex items-center justify-center hover:bg-[#F5A623] hover:text-black hover:border-[#F5A623] transition-all duration-300 active:scale-95"
+                style={{
+                  width: '40px', height: '40px', borderRadius: '50%',
+                  border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.02)',
+                  color: '#F0F0F0', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  cursor: 'pointer', transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#6366F1'; e.currentTarget.style.borderColor = '#6366F1'; e.currentTarget.style.color = '#000'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = '#F0F0F0'; }}
               >
-                <i className="ph-bold ph-arrow-right text-lg"></i>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
               </button>
             </div>
           </div>
@@ -151,42 +187,72 @@ const Experts = () => {
 
         {/* Universal Slider */}
         <div 
-          className="relative group"
+          style={{ position: 'relative' }}
           onMouseEnter={() => hoverRef.current = true}
           onMouseLeave={() => hoverRef.current = false}
         >
-           <div className="overflow-hidden rounded-[24px]">
+           <div style={{ overflow: 'hidden', borderRadius: '16px' }}>
             <div 
-              className={`flex ${isTransitioning ? 'transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]' : ''}`}
-              style={{ transform: `translateX(-${activeSlide * (100 / itemsPerView)}%)` }}
+              style={{ 
+                display: 'flex', 
+                transform: `translateX(-${activeSlide * (100 / itemsPerView)}%)`,
+                transition: isTransitioning ? 'transform 0.7s cubic-bezier(0.25, 1, 0.5, 1)' : 'none'
+              }}
             >
               {extendedExperts.map((expert, idx) => (
                 <div 
                   key={idx} 
-                  className="flex-shrink-0 px-3"
-                  style={{ width: `${100 / itemsPerView}%` }}
+                  style={{ flexShrink: 0, padding: '0 12px', width: `${100 / itemsPerView}%` }}
                 >
-                  <div className="group/card relative h-[450px] rounded-[24px] overflow-hidden bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] transition-all duration-500 hover:border-[#F5A623]/30 hover:shadow-[0_10px_40px_rgba(245,166,35,0.1)]">
-                    
-                    {/* Image takes full height with gradient overlay */}
+                  <div 
+                    className="card-ats"
+                    style={{ 
+                      position: 'relative', height: '450px', overflow: 'hidden', borderRadius: '16px',
+                      display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '24px'
+                    }}
+                    onMouseEnter={e => {
+                       const img = e.currentTarget.querySelector('img');
+                       const p = e.currentTarget.querySelector('p.desc');
+                       if (img) img.style.transform = 'scale(1.05)';
+                       if (p) p.style.opacity = '1';
+                    }}
+                    onMouseLeave={e => {
+                       const img = e.currentTarget.querySelector('img');
+                       const p = e.currentTarget.querySelector('p.desc');
+                       if (img) img.style.transform = 'scale(1)';
+                       if (p) p.style.opacity = '0';
+                    }}
+                  >
                     <img 
                       src={expert.photo} 
                       alt={expert.name} 
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-[1.05]" 
+                      style={{
+                        position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+                        objectFit: 'cover', transition: 'transform 0.7s ease', zIndex: 0
+                      }} 
                     />
+                    <div style={{
+                      position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+                      background: 'linear-gradient(to top, #07080C 0%, transparent 60%)', opacity: 0.9, zIndex: 1
+                    }} />
                     
-                    {/* Vignette & Bottom Gradient for text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-transparent to-transparent opacity-80 group-hover/card:opacity-90 transition-opacity duration-300"></div>
-                    
-                    {/* Content overlays sliding up from bottom */}
-                    <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col justify-end translate-y-[80px] group-hover/card:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]">
-                      <h3 className="font-['Bebas_Neue'] text-3xl text-white tracking-[1px] leading-tight drop-shadow-md">
+                    <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column' }}>
+                      <h3 style={{
+                        fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.75rem', fontWeight: 600, color: '#F0F0F0',
+                        lineHeight: 1.1, marginBottom: '4px'
+                      }}>
                         {expert.name}
                       </h3>
-                      <p className="text-[#F5A623] text-sm uppercase tracking-[2px] font-semibold mb-4 drop-shadow-md">
+                      <div style={{
+                        fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', fontWeight: 500, color: '#6366F1',
+                        letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '16px'
+                      }}>
                         {expert.role}
-                      </p>
-                      <p className="text-[0.9rem] text-[#ddd] leading-relaxed opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                      </div>
+                      <p className="desc" style={{
+                        fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', lineHeight: 1.6, color: '#94A3B8',
+                        opacity: 0, transition: 'opacity 0.5s ease', margin: 0
+                      }}>
                         {expert.desc}
                       </p>
                     </div>

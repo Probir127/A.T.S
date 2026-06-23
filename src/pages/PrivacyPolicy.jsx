@@ -5,18 +5,18 @@ import SEO from '../components/SEO';
 // Reusable Sub-components (Polished outside of render)
 const SectionSeparator = ({ title }) => (
   <div className="flex items-center justify-center gap-6 my-20 privacy-fade-up">
-    <div className="h-[1px] grow bg-gradient-to-r from-transparent to-[var(--accent-gold)] opacity-20"></div>
-    <h2 className="font-['Bebas_Neue'] text-[1.5rem] tracking-[4px] text-[var(--accent-gold)] uppercase whitespace-nowrap">
+    <div className="h-[1px] grow bg-gradient-to-r from-transparent to-[var(--accent-primary)] opacity-20"></div>
+    <h2 className="font-['Space_Grotesk'] text-[1.5rem] tracking-[4px] text-[var(--accent-primary)] uppercase whitespace-nowrap">
       — {title} —
     </h2>
-    <div className="h-[1px] grow bg-gradient-to-l from-transparent to-[var(--accent-gold)] opacity-20"></div>
+    <div className="h-[1px] grow bg-gradient-to-l from-transparent to-[var(--accent-primary)] opacity-20"></div>
   </div>
 );
 
 const PolicySection = ({ number, title, children }) => (
   <section className="privacy-fade-up mb-12">
-    <h3 className="font-['Bebas_Neue'] text-[2.2rem] text-[var(--text-main)] tracking-[1.5px] mb-6 flex items-baseline gap-4">
-      <span className="text-[var(--accent-gold)] opacity-50 text-[1.5rem]">{number}.</span>
+    <h3 className="font-['Space_Grotesk'] text-[2.2rem] text-[var(--text-main)] tracking-[1.5px] mb-6 flex items-baseline gap-4">
+      <span className="text-[var(--accent-primary)] opacity-50 text-[1.5rem]">{number}.</span>
       {title}
     </h3>
     <div className="text-[1.1rem] leading-[1.8] text-[var(--text-muted)] space-y-4">
@@ -39,10 +39,10 @@ const PrivacyPolicy = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="bg-[var(--bg-dark)] text-[var(--text-main)] min-h-screen pt-32 pb-24 overflow-hidden selection:bg-[var(--accent-gold-soft)] selection:text-[var(--accent-gold)]">
+    <div ref={containerRef} className="bg-[var(--bg-dark)] text-[var(--text-main)] min-h-screen pt-32 pb-24 overflow-hidden selection:bg-[var(--accent-primary-soft)] selection:text-[var(--accent-primary)]">
       <SEO 
         title="Privacy Policy" 
-        description="GrownK Agency Privacy Policy. Protecting your data as obsessively as we grow your brand." 
+        description="A.T.S Studio Privacy Policy. Protecting your data as obsessively as we grow your brand." 
         path="/privacy-policy" 
       />
       <div className="max-w-[900px] mx-auto px-[5%]">
@@ -50,18 +50,18 @@ const PrivacyPolicy = () => {
         {/* Document Header */}
         <div className="mb-24 text-center privacy-fade-up">
            <div className="flex flex-col items-center gap-2 mb-12">
-              <h3 className="font-['Bebas_Neue'] text-[3.5rem] leading-none tracking-[2px] text-[var(--text-main)]">
-                GROWN<span className="text-[var(--accent-gold)]">K</span>
+              <h3 className="font-['Space_Grotesk'] text-[3.5rem] leading-none tracking-[2px] text-[var(--text-main)]">
+                GROWN<span className="text-[var(--accent-primary)]">K</span>
               </h3>
               <p className="text-[0.8rem] uppercase tracking-[5px] text-[var(--text-muted)] font-medium">
-                PR & Digital Marketing Agency
+                Tech & Creative Studio
               </p>
            </div>
            
-           <div className="h-[2px] w-16 bg-[var(--accent-gold)] mx-auto mb-12 opacity-50"></div>
+           <div className="h-[2px] w-16 bg-[var(--accent-primary)] mx-auto mb-12 opacity-50"></div>
 
-           <h1 className="font-['Bebas_Neue'] text-[4.5rem] md:text-[6rem] leading-none tracking-[1px] mb-6 uppercase">
-             Privacy <span className="text-[var(--accent-gold)]">Policy</span>
+           <h1 className="font-['Space_Grotesk'] text-[4.5rem] md:text-[6rem] leading-none tracking-[1px] mb-6 uppercase">
+             Privacy <span className="text-[var(--accent-primary)]">Policy</span>
            </h1>
            <div className="flex justify-center items-center gap-6 text-[0.85rem] uppercase tracking-[2px] text-[var(--text-dim)] font-semibold mb-2">
               <span>Effective: 30 March 2026</span>
@@ -76,7 +76,7 @@ const PrivacyPolicy = () => {
         {/* INTRODUCTION Section */}
         <SectionSeparator title="INTRODUCTION" />
         <PolicySection number="01" title="SCOPE OF PRIVACY">
-          <p>GrownK Agency ("Agency," "we," "us," or "our") respects your privacy and is committed to protecting the personal and business data of our clients ("Client," "you," or "your"). This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website (www.grownk.com) or engage our PR and Digital Marketing services.</p>
+          <p>A.T.S Studio ("Agency," "we," "us," or "our") respects your privacy and is committed to protecting the personal and business data of our clients ("Client," "you," or "your"). This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website (www.ajantatechstudio.com) or engage our PR and Digital Marketing services.</p>
           <p>By using our website or services, you unconditionally agree to the collection and use of information in accordance with this policy.</p>
         </PolicySection>
 
@@ -85,14 +85,14 @@ const PrivacyPolicy = () => {
         <PolicySection number="02" title="PERSONAL & BUSINESS INFORMATION">
           <p>We collect information that you voluntarily provide to us when you express an interest in obtaining information about us or our services. This includes:</p>
           <ul className="list-none space-y-3 custom-list">
-            <li className="flex gap-3"><span className="text-[var(--accent-gold)]">▪</span> <strong>Identity Data:</strong> Full name, job title, and company name.</li>
-            <li className="flex gap-3"><span className="text-[var(--accent-gold)]">▪</span> <strong>Contact Data:</strong> Email address, phone number, WhatsApp ID, and business address.</li>
-            <li className="flex gap-3"><span className="text-[var(--accent-gold)]">▪</span> <strong>Project Data:</strong> Marketing goals, current digital asset links, budget ranges, and service preferences.</li>
+            <li className="flex gap-3"><span className="text-[var(--accent-primary)]">▪</span> <strong>Identity Data:</strong> Full name, job title, and company name.</li>
+            <li className="flex gap-3"><span className="text-[var(--accent-primary)]">▪</span> <strong>Contact Data:</strong> Email address, phone number, WhatsApp ID, and business address.</li>
+            <li className="flex gap-3"><span className="text-[var(--accent-primary)]">▪</span> <strong>Project Data:</strong> Marketing goals, current digital asset links, budget ranges, and service preferences.</li>
           </ul>
         </PolicySection>
 
         <PolicySection number="03" title="AUTOMATED DATA COLLECTION">
-          <p>When you navigate GrownK.com, we automatically collect certain technical information via cookies and similar tracking technologies. This includes your IP address, browser type, operating system, referring URLs, and interaction patterns on our site.</p>
+          <p>When you navigate A.T.S.com, we automatically collect certain technical information via cookies and similar tracking technologies. This includes your IP address, browser type, operating system, referring URLs, and interaction patterns on our site.</p>
           <p>This data helps us understand how visitors use our platform and allows us to optimize the "Luxury Tech" experience we provide.</p>
         </PolicySection>
 
@@ -102,11 +102,11 @@ const PrivacyPolicy = () => {
           <p>We utilize industry-standard 3rd party tools to measure performance and deliver targeted advertising. These may include:</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             <div className="p-4 rounded-xl border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)]">
-              <h4 className="font-bold text-[var(--accent-gold)] mb-2 uppercase text-[0.8rem] tracking-wider">Analytics</h4>
+              <h4 className="font-bold text-[var(--accent-primary)] mb-2 uppercase text-[0.8rem] tracking-wider">Analytics</h4>
               <p className="text-[0.95rem]">Google Analytics 4 (GA4) to track user journeys and site engagement metrics.</p>
             </div>
             <div className="p-4 rounded-xl border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)]">
-              <h4 className="font-bold text-[var(--accent-gold)] mb-2 uppercase text-[0.8rem] tracking-wider">Advertising</h4>
+              <h4 className="font-bold text-[var(--accent-primary)] mb-2 uppercase text-[0.8rem] tracking-wider">Advertising</h4>
               <p className="text-[0.95rem]">Meta Pixel, LinkedIn Insight Tag, and Google Tag Manager for conversion tracking.</p>
             </div>
           </div>
@@ -117,10 +117,10 @@ const PrivacyPolicy = () => {
         <PolicySection number="05" title="HOW WE USE YOUR DATA">
           <p>We process your information for purposes based on legitimate business interests, the fulfillment of our contract with you, and compliance with our legal obligations. Specifically:</p>
           <ul className="list-none space-y-3">
-            <li className="flex gap-3"><span className="text-[var(--accent-gold)]">▪</span> To generate custom Service Proposals and digital audits.</li>
-            <li className="flex gap-3"><span className="text-[var(--accent-gold)]">▪</span> To manage Client accounts, invoicing, and service delivery.</li>
-            <li className="flex gap-3"><span className="text-[var(--accent-gold)]">▪</span> To send administrative information, such as updates to our terms or policies.</li>
-            <li className="flex gap-3"><span className="text-[var(--accent-gold)]">▪</span> To protect our services from fraudulent or malicious activity.</li>
+            <li className="flex gap-3"><span className="text-[var(--accent-primary)]">▪</span> To generate custom Service Proposals and digital audits.</li>
+            <li className="flex gap-3"><span className="text-[var(--accent-primary)]">▪</span> To manage Client accounts, invoicing, and service delivery.</li>
+            <li className="flex gap-3"><span className="text-[var(--accent-primary)]">▪</span> To send administrative information, such as updates to our terms or policies.</li>
+            <li className="flex gap-3"><span className="text-[var(--accent-primary)]">▪</span> To protect our services from fraudulent or malicious activity.</li>
           </ul>
         </PolicySection>
 
@@ -136,16 +136,16 @@ const PrivacyPolicy = () => {
         </PolicySection>
 
         <PolicySection number="08" title="CLIENT DATA OWNERSHIP">
-          <p>All data, proprietary strategies, and assets provided by the Client during the course of an engagement remain the sole property of the Client. GrownK acts as a processor/custodian of this data and will respect all confidentiality agreements in place.</p>
+          <p>All data, proprietary strategies, and assets provided by the Client during the course of an engagement remain the sole property of the Client. A.T.S acts as a processor/custodian of this data and will respect all confidentiality agreements in place.</p>
         </PolicySection>
 
         {/* DISCLOSURE Section */}
         <SectionSeparator title="DISCLOSURE" />
         <PolicySection number="09" title="SHARING YOUR INFORMATION">
-          <p>GrownK does not sell or rent user data to third parties. We only share information when necessary to provide our services, such as:</p>
+          <p>A.T.S does not sell or rent user data to third parties. We only share information when necessary to provide our services, such as:</p>
           <ul className="list-none space-y-3">
-            <li className="flex gap-3"><span className="text-[var(--accent-gold)]">▪</span> <strong>Service Providers:</strong> Giving restricted access to vetted contractors or specialized tools (e.g., email marketing platforms) to execute your project.</li>
-            <li className="flex gap-3"><span className="text-[var(--accent-gold)]">▪</span> <strong>Legal Requirements:</strong> Disclosing info to government or law enforcement agencies if required by the laws of Bangladesh.</li>
+            <li className="flex gap-3"><span className="text-[var(--accent-primary)]">▪</span> <strong>Service Providers:</strong> Giving restricted access to vetted contractors or specialized tools (e.g., email marketing platforms) to execute your project.</li>
+            <li className="flex gap-3"><span className="text-[var(--accent-primary)]">▪</span> <strong>Legal Requirements:</strong> Disclosing info to government or law enforcement agencies if required by the laws of Bangladesh.</li>
           </ul>
         </PolicySection>
 
@@ -153,7 +153,7 @@ const PrivacyPolicy = () => {
         <SectionSeparator title="YOUR RIGHTS" />
         <PolicySection number="10" title="ACCESS & CONTROL">
           <p>You have the right to request access to the personal data we hold about you, to request corrections to inaccurate data, or to request the deletion of your data when it is no longer needed for business or legal purposes.</p>
-          <p>To exercise these rights, please email us at <a href="mailto:agency.grownk@gmail.com" className="text-[var(--accent-gold)] hover:underline">agency.grownk@gmail.com</a>.</p>
+          <p>To exercise these rights, please email us at <a href="mailto:Studio.A.T.S@gmail.com" className="text-[var(--accent-primary)] hover:underline">Studio.A.T.S@gmail.com</a>.</p>
         </PolicySection>
 
         {/* CHANGES & GOVERNING Section */}
@@ -172,16 +172,16 @@ const PrivacyPolicy = () => {
              Questions about how we handle your data?
            </p>
            <div className="flex flex-col items-center gap-4">
-              <a href="mailto:agency.grownk@gmail.com" className="text-[var(--accent-gold)] hover:text-white transition-colors duration-300 font-semibold tracking-wide border border-[rgba(245,166,35,0.3)] py-3 px-8 rounded-xl bg-[rgba(245,166,35,0.02)]">
-                agency.grownk@gmail.com
+              <a href="mailto:Studio.A.T.S@gmail.com" className="text-[var(--accent-primary)] hover:text-white transition-colors duration-300 font-semibold tracking-wide border border-[rgba(124, 58, 237,0.3)] py-3 px-8 rounded-xl bg-[rgba(124, 58, 237,0.02)]">
+                Studio.A.T.S@gmail.com
               </a>
               <p className="text-[var(--text-dim)] uppercase tracking-[3px] text-[0.8rem] mt-4">
-                Bangladesh · PR & Digital Marketing Agency
+                Bangladesh · Tech & Creative Studio
               </p>
            </div>
 
            <div className="mt-24 pt-12 border-t border-[rgba(255,255,255,0.03)] text-[0.75rem] text-[var(--text-dim)] uppercase tracking-[2px]">
-             © 2026 GrownK Agency. All Rights Reserved.
+             © 2026 A.T.S Studio. All Rights Reserved.
            </div>
         </div>
 

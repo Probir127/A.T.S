@@ -1,111 +1,262 @@
 import React from 'react';
-import { SVC_DETAILS, SVC_CLASS } from '../../data/servicesData';
-import { useCurrency } from '../../contexts/CurrencyContext';
 
-const Services = ({ selectedServices, toggleService }) => {
-  const { currency } = useCurrency();
-  const coreServices = ['manual', 'custom', 'total'];
+const SERVICES = [
+  {
+    id: 'web-app',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/>
+        <path d="M8 21h8M12 17v4"/>
+        <path d="M7 8l2 2-2 2M11 13h4"/>
+      </svg>
+    ),
+    title: 'Custom Web Applications',
+    desc: 'We design and develop production-grade web applications using React, Next.js, and Node.js — optimized for performance, accessibility, and long-term maintainability.',
+    tags: ['React', 'Next.js', 'Node.js'],
+  },
+  {
+    id: 'design',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a5 5 0 0 1 5 5c0 5-5 9-5 9S7 12 7 7a5 5 0 0 1 5-5z"/>
+        <circle cx="12" cy="7" r="2"/>
+        <path d="M3 21l4-4M21 21l-4-4"/>
+        <path d="M7 17l10 0"/>
+      </svg>
+    ),
+    title: 'UI/UX Design Systems',
+    desc: 'We architect comprehensive design systems — from component libraries to interaction patterns — that scale across products and teams without losing coherence.',
+    tags: ['Figma', 'Design Tokens', 'Accessibility'],
+  },
+  {
+    id: 'platform',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="9" height="9" rx="2"/>
+        <rect x="13" y="2" width="9" height="9" rx="2"/>
+        <rect x="2" y="13" width="9" height="9" rx="2"/>
+        <rect x="13" y="13" width="9" height="9" rx="2"/>
+      </svg>
+    ),
+    title: 'Platform Architecture',
+    desc: 'We design resilient, scalable digital infrastructure — API layers, microservices, database schemas — built to handle enterprise traffic and evolve over years, not months.',
+    tags: ['AWS', 'PostgreSQL', 'Microservices'],
+  },
+  {
+    id: 'mobile',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2"/>
+        <line x1="12" y1="18" x2="12.01" y2="18"/>
+      </svg>
+    ),
+    title: 'Mobile Applications',
+    desc: 'Cross-platform mobile applications that feel native. We build with React Native for maximum velocity without sacrificing the polish enterprise users demand.',
+    tags: ['React Native', 'iOS', 'Android'],
+  },
+  {
+    id: 'brand',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+    ),
+    title: 'Digital Brand Identity',
+    desc: 'From logo systems to motion guidelines, we craft brand identities with the depth and precision that enterprise organizations require across every touchpoint.',
+    tags: ['Identity', 'Motion', 'Guidelines'],
+  },
+  {
+    id: 'seo',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    ),
+    title: 'Performance & SEO',
+    desc: 'We engineer for measurable results: Core Web Vitals, organic discoverability, and analytics infrastructure that gives you full visibility into what matters.',
+    tags: ['Core Web Vitals', 'Analytics', 'SEO'],
+  },
+];
 
+const Services = () => {
   return (
-    <section className="py-20 px-0 relative bg-[var(--bg-dark)]" id="solutions">
-      <div className="max-w-[1200px] mx-auto px-[5%]">
-        <div className="text-center mb-8 reveal fade-up">
-          <p className="text-[0.75rem] uppercase tracking-[3px] text-[var(--accent-gold)] mb-6 font-semibold font-['Inter']">Chapter IV</p>
-          <h2 className="font-['Bebas_Neue'] text-[clamp(2.5rem,6vw,4rem)] text-[var(--text-main)] uppercase leading-none tracking-[1px] mb-4">
-            Build Your <span className="text-gradient-gold">Stack</span>
+    <section
+      id="solutions"
+      style={{
+        padding: '120px 0',
+        background: '#07080C',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+      }}
+    >
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+
+        {/* Section Header */}
+        <div style={{ maxWidth: '600px', marginBottom: '72px' }}>
+          <div className="overline" style={{ marginBottom: '20px' }}>
+            What we build
+          </div>
+          <h2
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 'clamp(2rem, 5vw, 2.75rem)',
+              fontWeight: 700,
+              lineHeight: 1.1,
+              letterSpacing: '-0.02em',
+              color: '#F0F0F0',
+              marginBottom: '20px',
+            }}
+          >
+            Studio-grade software for{' '}
+            <span className="text-gradient-signature">organizations that ship.</span>
           </h2>
-          <p className="max-w-[680px] mx-auto text-[var(--text-muted)] text-[clamp(1rem,2vw,1.15rem)] leading-[1.7]">
-            Select a core partnership model, then add targeted artillery to deploy a 
-            high-performance growth ecosystem.
+          <p
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '1.0625rem',
+              lineHeight: 1.7,
+              color: '#94A3B8',
+            }}
+          >
+            We design and develop across the full digital stack —
+            from architecture decisions to pixel-level craft.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {coreServices.map((id) => {
-            const svc = SVC_DETAILS[id];
-            const isSelected = selectedServices.has(id);
-            const featuredClass = id === 'total' ? 'border-[rgba(245,166,35,0.25)] bg-[rgba(245,166,35,0.04)]' : 'border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)]';
-            const selectedClass = isSelected ? SVC_CLASS[id] : '';
+        {/* Services Grid */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+            gap: '1px',
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.06)',
+            borderRadius: '12px',
+            overflow: 'hidden',
+          }}
+        >
+          {SERVICES.map((svc) => (
+            <ServiceCard key={svc.id} svc={svc} />
+          ))}
+        </div>
 
-            return (
-              <div 
-                key={id}
-                onClick={() => toggleService(id)}
-                className={`group relative rounded-[20px] border p-8 pb-20 flex flex-col gap-[1.2rem] transition-all duration-350 ease-out cursor-pointer overflow-hidden h-full box-border hover:-translate-y-1 ${featuredClass} ${selectedClass} ${id === 'total' ? 'hover:border-[rgba(245,166,35,0.55)] hover:shadow-[0_0_50px_rgba(245,166,35,0.12)]' : 'hover:border-[rgba(245,166,35,0.35)] hover:shadow-[0_0_40px_rgba(245,166,35,0.08)]'}`}
-              >
-                {/* Selection Overlay */}
-                <div className={`absolute top-[1.2rem] left-[1.2rem] flex items-center gap-1.5 bg-[rgba(245,166,35,0.15)] text-[var(--accent-gold)] border border-[rgba(245,166,35,0.3)] rounded-[20px] text-[0.7rem] px-3 py-1 font-['Bebas_Neue'] tracking-[1px] transition-all duration-250 pointer-events-none ${isSelected ? 'opacity-100 scale-100' : 'opacity-0 scale-80'}`}>
-                  <i className="ph-bold ph-check"></i> Added
-                </div>
-
-                {/* Badge */}
-                {svc.badge && (
-                  <div className={`absolute top-[1.2rem] right-[1.2rem] bg-[rgba(245,166,35,0.12)] text-[var(--accent-gold)] border border-[rgba(245,166,35,0.25)] rounded-[20px] text-[0.65rem] font-['Bebas_Neue'] tracking-[2px] px-3 py-1 uppercase`}>
-                    {svc.badge}
-                  </div>
-                )}
-
-                {/* Icon */}
-                <div className="w-[52px] h-[52px] rounded-[14px] bg-[rgba(245,166,35,0.1)] text-[var(--accent-gold)] flex items-center justify-center text-2xl flex-shrink-0">
-                  <i className={svc.icon}></i>
-                </div>
-
-                {/* Content */}
-                <div className="flex flex-col gap-3 flex-grow">
-                  <h3 className="font-['Bebas_Neue'] text-[1.6rem] text-[var(--text-main)] m-0 tracking-[0.5px] uppercase">{svc.name}</h3>
-                  <p className="text-[0.9rem] text-[var(--text-muted)] leading-[1.6] m-0">
-                    {id === 'manual' && 'For brands that have the talent but need a high-performance roadmap and technical strategy.'}
-                    {id === 'custom' && 'Elite-tier infrastructure and ad strategy for established brands looking to scale aggressively.'}
-                    {id === 'total' && 'The premium partnership. We deploy, manage, and scale your entire digital presence 24/7.'}
-                  </p>
-
-                  <ul className="list-none flex flex-col gap-2 m-0 p-0">
-                    {id === 'manual' && [
-                      'Website Template (up to 5 pages)*',
-                      'Social media set up + 1 boosting*',
-                      'Brand kit handover',
-                      '1 training session'
-                    ].map(f => <li key={f} className="flex items-center gap-2 text-[0.85rem] text-[var(--text-muted)]"><i className="ph-bold ph-check text-[var(--accent-gold)] text-[0.8rem]"></i>{f}</li>)}
-                    
-                    {id === 'custom' && [
-                      'Website custom design*',
-                      'Social media set up',
-                      'Meta Ad boosting*',
-                      'Brand kit handover',
-                      '1 training session'
-                    ].map(f => <li key={f} className="flex items-center gap-2 text-[0.85rem] text-[var(--text-muted)]"><i className="ph-bold ph-check text-[var(--accent-gold)] text-[0.8rem]"></i>{f}</li>)}
-
-                    {id === 'total' && [
-                      'Website Template design*',
-                      'Social media set up',
-                      'Meta Ad management',
-                      'Content posting (8 videos, 15 photos)',
-                      'Graphic support (Up to 15 photos)',
-                      'Technical support',
-                      'Brand kit handover'
-                    ].map(f => <li key={f} className="flex items-start gap-2 text-[0.85rem] text-[var(--text-muted)] leading-[1.4]"><i className="ph-bold ph-check text-[var(--accent-gold)] text-[0.8rem] mt-[0.15rem]"></i>{f}</li>)}
-                  </ul>
-                </div>
-
-                {/* Pricing */}
-                <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-[rgba(255,255,255,0.06)] flex-shrink-0">
-                  <span className="text-[0.7rem] uppercase tracking-[2px] text-[var(--text-dim)]">Starting Investment</span>
-                  <span className={`font-['Bebas_Neue'] text-[1.9rem] leading-[1.2] break-words text-[var(--accent-gold)]`}>{svc.price[currency]}</span>
-                </div>
-
-                {/* Add Button */}
-                <button 
-                  className={`absolute bottom-[1.4rem] left-[1.4rem] right-[1.4rem] flex items-center justify-center gap-2 p-3 rounded-xl border font-['Bebas_Neue'] text-[0.9rem] tracking-[1.5px] cursor-pointer transition-all duration-300 transform active:scale-95 ${isSelected ? 'bg-[rgba(255,255,255,0.05)] text-[var(--text-muted)] border-[rgba(255,255,255,0.12)]' : 'bg-transparent text-[var(--accent-gold)] border-[rgba(245,166,35,0.4)] hover:bg-[var(--accent-gold)] hover:text-black hover:border-[var(--accent-gold)]'}`}
-                >
-                  <i className={`ph-bold ${isSelected ? 'ph-check' : 'ph-plus-circle'}`}></i>
-                  <span>{isSelected ? 'In Stack' : 'Add Solution'}</span>
-                </button>
-              </div>
-            );
-          })}
+        {/* Bottom CTA */}
+        <div
+          style={{
+            marginTop: '56px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '32px',
+            flexWrap: 'wrap',
+          }}
+        >
+          <a href="/contact" className="btn-primary">
+            Discuss a Project
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 7h10M8 3l4 4-4 4"/>
+            </svg>
+          </a>
+          <p
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: '0.8125rem',
+              color: '#64748B',
+              letterSpacing: '0.02em',
+            }}
+          >
+            // All projects begin with a scoping conversation, no commitment required.
+          </p>
         </div>
       </div>
     </section>
+  );
+};
+
+const ServiceCard = ({ svc }) => {
+  return (
+    <div
+      style={{
+        padding: '40px',
+        background: '#07080C',
+        transition: 'background 0.25s ease',
+        cursor: 'default',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.background = '#0E1117';
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.background = '#07080C';
+      }}
+    >
+      {/* Icon */}
+      <div
+        style={{
+          width: '48px',
+          height: '48px',
+          borderRadius: '10px',
+          background: 'rgba(99,102,241,0.08)',
+          border: '1px solid rgba(99,102,241,0.15)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#818CF8',
+          marginBottom: '24px',
+          flexShrink: 0,
+        }}
+      >
+        {svc.icon}
+      </div>
+
+      {/* Title */}
+      <h3
+        style={{
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontSize: '1.1875rem',
+          fontWeight: 600,
+          lineHeight: 1.25,
+          color: '#F0F0F0',
+          marginBottom: '12px',
+          letterSpacing: '-0.01em',
+        }}
+      >
+        {svc.title}
+      </h3>
+
+      {/* Description */}
+      <p
+        style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '0.9375rem',
+          lineHeight: 1.65,
+          color: '#64748B',
+          marginBottom: '24px',
+        }}
+      >
+        {svc.desc}
+      </p>
+
+      {/* Tags */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+        {svc.tags.map(tag => (
+          <span
+            key={tag}
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: '0.6875rem',
+              letterSpacing: '0.06em',
+              color: '#10B981',
+              background: 'rgba(16,185,129,0.08)',
+              border: '1px solid rgba(16,185,129,0.15)',
+              borderRadius: '4px',
+              padding: '4px 10px',
+            }}
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 };
 

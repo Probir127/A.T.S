@@ -47,7 +47,7 @@ const GrowthChart = () => {
   }, []);
 
   return (
-    <section className="py-24 px-0 relative bg-[#0b0c10]" id="growth">
+    <section className="py-24 px-0 relative bg-[#07080C]" id="growth">
       <div className="max-w-[1100px] mx-auto px-4 md:px-8">
         
         {/* Main Chart Container */}
@@ -55,21 +55,21 @@ const GrowthChart = () => {
           
           {/* Header & Legend */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12 gap-6">
-            <h3 className="font-['Bebas_Neue'] text-[2rem] md:text-[2.8rem] tracking-[1px] leading-tight text-white whitespace-nowrap">
+            <h3 className="font-['Space_Grotesk'] text-[2rem] md:text-[2.8rem] tracking-[1px] leading-tight text-white whitespace-nowrap">
               6-MONTH GROWTH TRAJECTORY
             </h3>
             
               <div className="flex flex-wrap items-center gap-4 md:gap-6">
                 <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 bg-[#F5A623] rounded-sm flex-shrink-0 shadow-[0_0_8px_rgba(245,166,35,0.6)]"></div>
+                  <div className="w-2.5 h-2.5 bg-[#6366F1] rounded-sm flex-shrink-0 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></div>
                   <span className="text-[0.8rem] text-gray-300 font-medium tracking-wide">Posts</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 bg-[#00F3FF] rounded-sm flex-shrink-0 shadow-[0_0_8px_rgba(0,243,255,0.6)]"></div>
+                  <div className="w-2.5 h-2.5 bg-[#10B981] rounded-sm flex-shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></div>
                   <span className="text-[0.8rem] text-gray-300 font-medium tracking-wide">Followers (K)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 bg-[#F5A623] rounded-sm flex-shrink-0 shadow-[0_0_8px_rgba(0,212,170,0.6)]"></div>
+                  <div className="w-2.5 h-2.5 bg-[#6366F1] rounded-sm flex-shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></div>
                   <span className="text-[0.8rem] text-gray-300 font-medium tracking-wide">Engagement (K)</span>
                 </div>
               </div>
@@ -96,13 +96,13 @@ const GrowthChart = () => {
                 >
                   <defs>
                     <linearGradient id="chartLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#00F3FF"/>
-                      <stop offset="50%" stopColor="#F5A623"/>
-                      <stop offset="100%" stopColor="#F5A623"/>
+                      <stop offset="0%" stopColor="#10B981"/>
+                      <stop offset="50%" stopColor="#6366F1"/>
+                      <stop offset="100%" stopColor="#6366F1"/>
                     </linearGradient>
                     <linearGradient id="chartAreaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#F5A623" stopOpacity="0.25"/>
-                      <stop offset="100%" stopColor="#F5A623" stopOpacity="0"/>
+                      <stop offset="0%" stopColor="#6366F1" stopOpacity="0.25"/>
+                      <stop offset="100%" stopColor="#6366F1" stopOpacity="0"/>
                     </linearGradient>
                     <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
                       <feGaussianBlur stdDeviation="2" result="blur" />
@@ -129,10 +129,10 @@ const GrowthChart = () => {
 
                 {/* Floating Number & Dot at the tip of the graph */}
                 <div className="absolute top-0 right-[5%] -translate-y-[40%] translate-x-[50%] flex flex-col items-center z-20">
-                  <div className="bg-[#111318] border border-[#F5A623]/40 text-[#F5A623] px-3 py-1 rounded-[8px] text-[0.8rem] md:text-[0.9rem] font-['Bebas_Neue'] tracking-[1px] shadow-[0_0_15px_rgba(245,166,35,0.25)] backdrop-blur-sm mb-1.5 animate-pulse">
+                  <div className="bg-[#111318] border border-[#6366F1]/40 text-[#6366F1] px-3 py-1 rounded-[8px] text-[0.8rem] md:text-[0.9rem] font-['Space_Grotesk'] tracking-[1px] shadow-[0_0_15px_rgba(99,102,241,0.25)] backdrop-blur-sm mb-1.5 animate-pulse">
                     816K
                   </div>
-                  <div className="w-3.5 h-3.5 rounded-full bg-[#F5A623] shadow-[0_0_12px_rgba(245,166,35,0.9)] z-10"></div>
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#6366F1] shadow-[0_0_12px_rgba(99,102,241,0.9)] z-10"></div>
                 </div>
 
               </div>
@@ -151,19 +151,19 @@ const GrowthChart = () => {
           {/* Bottom Stats Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <div className="stat-box bg-white/[0.02] backdrop-blur-md rounded-2xl border border-[rgba(255,255,255,0.06)] p-8 flex flex-col items-center justify-center relative overflow-hidden group hover:border-[#F5A623]/40 hover:-translate-y-1 hover:bg-white/[0.04] transition-all duration-300 shadow-lg">
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(245,166,35,0.05)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="font-['Bebas_Neue'] text-[3.5rem] md:text-[4.2rem] leading-none text-white tracking-[1px] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                816<span className="text-[2.5rem] md:text-[3rem] text-[#F5A623]">K</span>
+            <div className="stat-box bg-white/[0.02] backdrop-blur-md rounded-2xl border border-[rgba(255,255,255,0.06)] p-8 flex flex-col items-center justify-center relative overflow-hidden group hover:border-[#6366F1]/40 hover:-translate-y-1 hover:bg-white/[0.04] transition-all duration-300 shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(99,102,241,0.05)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="font-['Space_Grotesk'] text-[3.5rem] md:text-[4.2rem] leading-none text-white tracking-[1px] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                816<span className="text-[2.5rem] md:text-[3rem] text-[#6366F1]">K</span>
               </div>
               <span className="text-[0.75rem] uppercase tracking-[3px] font-semibold text-gray-400 mt-3 z-10 group-hover:text-gray-200 transition-colors duration-300">
                 Total Followers
               </span>
             </div>
 
-            <div className="stat-box bg-white/[0.02] backdrop-blur-md rounded-2xl border border-[rgba(255,255,255,0.06)] p-8 flex flex-col items-center justify-center relative overflow-hidden group hover:border-[#00F3FF]/40 hover:-translate-y-1 hover:bg-white/[0.04] transition-all duration-300 shadow-lg">
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,243,255,0.05)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="font-['Bebas_Neue'] text-[3.5rem] md:text-[4.2rem] leading-none text-white tracking-[1px] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+            <div className="stat-box bg-white/[0.02] backdrop-blur-md rounded-2xl border border-[rgba(255,255,255,0.06)] p-8 flex flex-col items-center justify-center relative overflow-hidden group hover:border-[#10B981]/40 hover:-translate-y-1 hover:bg-white/[0.04] transition-all duration-300 shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(16,185,129,0.05)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="font-['Space_Grotesk'] text-[3.5rem] md:text-[4.2rem] leading-none text-white tracking-[1px] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                 24
               </div>
               <span className="text-[0.75rem] uppercase tracking-[3px] font-semibold text-gray-400 mt-3 z-10 group-hover:text-gray-200 transition-colors duration-300">
@@ -171,10 +171,10 @@ const GrowthChart = () => {
               </span>
             </div>
 
-            <div className="stat-box bg-white/[0.02] backdrop-blur-md rounded-2xl border border-[rgba(255,255,255,0.06)] p-8 flex flex-col items-center justify-center relative overflow-hidden group hover:border-[#F5A623]/40 hover:-translate-y-1 hover:bg-white/[0.04] transition-all duration-300 shadow-lg">
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,212,170,0.05)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="font-['Bebas_Neue'] text-[3.5rem] md:text-[4.2rem] leading-none text-white tracking-[1px] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                11.7<span className="text-[2.5rem] md:text-[3rem] text-[#F5A623]">K</span>
+            <div className="stat-box bg-white/[0.02] backdrop-blur-md rounded-2xl border border-[rgba(255,255,255,0.06)] p-8 flex flex-col items-center justify-center relative overflow-hidden group hover:border-[#6366F1]/40 hover:-translate-y-1 hover:bg-white/[0.04] transition-all duration-300 shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(16,185,129,0.05)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="font-['Space_Grotesk'] text-[3.5rem] md:text-[4.2rem] leading-none text-white tracking-[1px] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                11.7<span className="text-[2.5rem] md:text-[3rem] text-[#6366F1]">K</span>
               </div>
               <span className="text-[0.75rem] uppercase tracking-[3px] font-semibold text-gray-400 mt-3 z-10 group-hover:text-gray-200 transition-colors duration-300">
                 Avg Engagement

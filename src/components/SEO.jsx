@@ -2,13 +2,13 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, path = '' }) => {
-  const siteUrl = 'https://www.grownk.com';
+  const siteUrl = 'https://www.ajantatechstudio.com';
   const url = `${siteUrl}${path}`;
-  const defaultTitle = 'GrownK - Your story. Their screen. Our strategy.';
-  const defaultDescription = "At GrownK we don't just market, we build brand with you. Digital marketing, social media management, and brand strategy services.";
+  const defaultTitle = 'A.T.S - Where Technology Meets Craft.';
+  const defaultDescription = "Ajanta Tech & Studio (A.T.S) is a premium software development and creative studio. We build enterprise-grade digital products with the precision of engineering and the intentionality of design.";
 
   const seo = {
-    title: title ? `${title} | GrownK` : defaultTitle,
+    title: title ? `${title} | A.T.S` : defaultTitle,
     description: description || defaultDescription,
     url: url,
   };

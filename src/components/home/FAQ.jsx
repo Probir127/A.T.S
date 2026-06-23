@@ -5,20 +5,20 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "How long does it take for my website to be ready?",
-      answer: "A typical website take 1 week - 1 month to get the final results depending on complexity and features."
+      question: "How long does it take to ship a custom platform?",
+      answer: "A typical enterprise platform takes 4 to 8 weeks to architect, build, and deploy depending on the complexity of the integrations and the scale of the ecosystem."
     },
     {
-      question: "Do you provide after-sales support?",
-      answer: "Yes, we'll fix any bug in the website for the future service with add on charges. We ensure your ecosystem remains stable."
+      question: "Do you provide ongoing infrastructure support?",
+      answer: "Yes, we offer ongoing SLA-backed support and maintenance. We don't just build ecosystems; we ensure they remain stable, secure, and highly performant under load."
     },
     {
-      question: "Will my website be mobile-friendly?",
-      answer: "Yes, all of our digital ecosystems are fully responsive and optimized for mobile devices, ensuring a premium experience on every screen."
+      question: "Will the ecosystem scale as we grow?",
+      answer: "Absolutely. We build exclusively on modern, scalable cloud architectures. From Day 1, your platform is engineered to handle massive concurrent traffic without degrading performance."
     },
     {
-      question: "Do you handle content posting for all services?",
-      answer: "It is depending on services you are taking. Content posting is only available in our Total Management service."
+      question: "How is the intellectual property handled?",
+      answer: "Upon project completion and final payment, you own 100% of the codebase, design assets, and intellectual property. We simply provide the engineering horsepower to bring it to life."
     }
   ];
 
@@ -27,44 +27,92 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-24 px-0 relative bg-[var(--bg-dark)] border-t border-[rgba(255,255,255,0.03)]" id="faq">
-      <div className="max-w-[1200px] mx-auto px-[5%]">
-        <div className="text-center mb-16 reveal fade-up">
-          <p className="text-[0.75rem] uppercase tracking-[3px] text-[var(--accent-gold)] mb-6 font-semibold font-['Inter']">Clarification</p>
-          <h2 className="font-['Bebas_Neue'] text-[clamp(2.5rem,6vw,4rem)] text-[var(--text-main)] uppercase leading-none tracking-[1px] mb-4">
-            Common <span className="text-[var(--accent-gold)]">Questions</span>
+    <section id="faq" style={{ padding: '120px 0', background: '#07080C', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+        
+        {/* Header */}
+        <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 72px auto' }}>
+          <div className="overline" style={{ marginBottom: '20px' }}>Clarification</div>
+          <h2
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 'clamp(2rem, 5vw, 2.75rem)',
+              fontWeight: 700,
+              lineHeight: 1.1,
+              letterSpacing: '-0.02em',
+              color: '#F0F0F0',
+              marginBottom: '20px',
+            }}
+          >
+            Common <span className="text-gradient-signature">Questions</span>
           </h2>
-          <p className="max-w-[650px] mx-auto text-[var(--text-muted)] text-[clamp(1rem,2vw,1.15rem)] leading-[1.7]">
+          <p
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '1.0625rem',
+              lineHeight: 1.7,
+              color: '#94A3B8',
+            }}
+          >
             Clarity on how we build, deploy, and scale your custom ecosystem. 
             Everything you need to know before we begin.
           </p>
         </div>
 
-        <div className="max-w-[800px] mx-auto flex flex-col gap-4">
-          {faqs.map((faq, index) => (
-            <div 
-              key={index} 
-              className={`group rounded-2xl border transition-all duration-350 overflow-hidden ${activeIndex === index ? 'bg-[rgba(255,255,255,0.04)] border-[rgba(245,166,35,0.3)]' : 'bg-[rgba(255,255,255,0.02)] border-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.15)]'}`}
-            >
-              <button 
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
-              >
-                <span className="font-['Bebas_Neue'] text-[1.4rem] tracking-[0.5px] text-[var(--text-main)] transition-colors duration-300 group-hover:text-[var(--accent-gold)]">
-                  {faq.question}
-                </span>
-                <i className={`ph-bold ph-caret-down text-xl transition-transform duration-500 text-[var(--accent-gold)] ${activeIndex === index ? 'rotate-180' : ''}`}></i>
-              </button>
-              
+        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {faqs.map((faq, index) => {
+            const isActive = activeIndex === index;
+            return (
               <div 
-                className={`transition-all duration-500 ease-in-out px-6 overflow-hidden ${activeIndex === index ? 'max-h-[300px] pb-8 opacity-100' : 'max-h-0 opacity-0'}`}
+                key={index} 
+                className="card-ats"
+                style={{ 
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  background: isActive ? '#0E1117' : 'rgba(255,255,255,0.02)',
+                  borderColor: isActive ? 'rgba(99,102,241,0.3)' : 'rgba(255,255,255,0.06)',
+                  transition: 'all 0.3s ease'
+                }}
               >
-                <p className="text-[1.05rem] text-[var(--text-muted)] leading-[1.7] border-t border-[rgba(255,255,255,0.05)] pt-6">
-                  {faq.answer}
-                </p>
+                <button 
+                  onClick={() => toggleFAQ(index)}
+                  style={{
+                    width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                    padding: '24px 32px', background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left',
+                    color: isActive ? '#6366F1' : '#F0F0F0',
+                  }}
+                  onMouseEnter={e => { if(!isActive) e.currentTarget.style.color = '#6366F1'; }}
+                  onMouseLeave={e => { if(!isActive) e.currentTarget.style.color = '#F0F0F0'; }}
+                >
+                  <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.25rem', fontWeight: 500 }}>
+                    {faq.question}
+                  </span>
+                  <svg 
+                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                    style={{ transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease', flexShrink: 0 }}
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                
+                <div 
+                  style={{ 
+                    maxHeight: isActive ? '300px' : '0px', 
+                    opacity: isActive ? 1 : 0, 
+                    overflow: 'hidden',
+                    transition: 'all 0.3s ease-in-out',
+                    padding: isActive ? '0 32px 32px 32px' : '0 32px',
+                  }}
+                >
+                  <div style={{ paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', lineHeight: 1.7, color: '#94A3B8', margin: 0 }}>
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

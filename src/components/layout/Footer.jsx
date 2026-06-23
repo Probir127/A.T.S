@@ -5,54 +5,69 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0b0c10] border-t border-[rgba(255,255,255,0.05)] pt-16 pb-10">
-      <div className="max-w-[1200px] mx-auto px-[5%]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <footer style={{ background: '#07080C', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '80px 0 40px 0' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px', marginBottom: '80px' }}>
+          
           {/* Brand */}
-          <div className="flex flex-col gap-4">
-            <Link to="/" className="text-[2.5rem] font-['Bebas_Neue'] text-[var(--text-main)] tracking-[1px] leading-none no-underline">
-              <span className="notranslate">Grown<span className="text-[var(--accent-gold)]">K</span></span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '2.5rem', fontWeight: 600, color: '#F0F0F0', letterSpacing: '1px' }} className="notranslate">
+                A.T.<span style={{ color: '#6366F1' }}>S</span>
+              </span>
             </Link>
-            <p className="text-[var(--text-muted)] text-[0.95rem] leading-relaxed max-w-[280px]">
-              Transforming complex businesses into compelling narratives.
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9375rem', color: '#94A3B8', lineHeight: 1.6, margin: 0, maxWidth: '280px' }}>
+              Ajanta Tech and Studio. Enterprise software engineered for resilience.
             </p>
           </div>
 
           {/* Services */}
-          <div className="flex flex-col gap-4">
-            <h4 className="font-['Bebas_Neue'] text-lg text-[var(--text-main)] tracking-[1.5px] uppercase">Services</h4>
-            <ul className="flex flex-col gap-2.5 list-none p-0 m-0">
-              <li><a href="/#solutions" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">Manual Service</a></li>
-              <li><a href="/#solutions" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">Custom Service</a></li>
-              <li><a href="/#solutions" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">Total Management</a></li>
-            </ul>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.875rem', color: '#F0F0F0', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>
+              Services
+            </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {['Custom Web Applications', 'UI/UX Design Systems', 'Platform Architecture'].map((item, i) => (
+                <Link key={i} to="/#services" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#94A3B8', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={e => e.target.style.color = '#6366F1'} onMouseLeave={e => e.target.style.color = '#94A3B8'}>
+                  {item}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Pages */}
-          <div className="flex flex-col gap-4">
-            <h4 className="font-['Bebas_Neue'] text-lg text-[var(--text-main)] tracking-[1.5px] uppercase">Pages</h4>
-            <ul className="flex flex-col gap-2.5 list-none p-0 m-0">
-              <li><Link to="/about" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">About</Link></li>
-              <li><Link to="/career" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">Career</Link></li>
-              <li><Link to="/blog" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">Blog</Link></li>
-              <li><Link to="/ai-studies" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">AI Studies</Link></li>
-              <li><Link to="/contact" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">Contact</Link></li>
-            </ul>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.875rem', color: '#F0F0F0', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>
+              Pages
+            </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {['About', 'Career', 'Blog', 'AI Studies', 'Contact'].map((item, i) => (
+                <Link key={i} to={`/${item.toLowerCase().replace(' ', '-')}`} style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#94A3B8', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={e => e.target.style.color = '#6366F1'} onMouseLeave={e => e.target.style.color = '#94A3B8'}>
+                  {item}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Policy & Office */}
-          <div className="flex flex-col gap-6">
-            <div>
-              <h4 className="font-['Bebas_Neue'] text-lg text-[var(--text-main)] tracking-[1.5px] uppercase mb-3">Policy</h4>
-              <ul className="flex flex-col gap-2 list-none p-0 m-0">
-                <li><Link to="/privacy-policy" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">Privacy Policy</Link></li>
-                <li><Link to="/terms-conditions" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">Terms & Conditions</Link></li>
-                <li><Link to="/refund-policy" className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors text-[0.9rem] no-underline">Refund Policy</Link></li>
-              </ul>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.875rem', color: '#F0F0F0', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>
+                Policy
+              </h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {['Privacy Policy', 'Terms & Conditions', 'Refund Policy'].map((item, i) => (
+                  <Link key={i} to={`/${item.toLowerCase().replace(/ & | /g, '-')}`} style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#94A3B8', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={e => e.target.style.color = '#6366F1'} onMouseLeave={e => e.target.style.color = '#94A3B8'}>
+                    {item}
+                  </Link>
+                ))}
+              </div>
             </div>
-            <div>
-              <h4 className="font-['Bebas_Neue'] text-lg text-[var(--text-main)] tracking-[1.5px] uppercase mb-2">Office</h4>
-              <p className="text-[var(--text-muted)] text-[0.85rem] leading-relaxed">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.875rem', color: '#F0F0F0', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>
+                Office
+              </h4>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#94A3B8', lineHeight: 1.6, margin: 0 }}>
                 House: 02, Block: B, Road: 04,<br />
                 Banasree, Rampura, Dhaka 1219
               </p>
@@ -60,12 +75,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-[rgba(255,255,255,0.05)] text-[var(--text-dim)] text-sm gap-4">
-          <p>&copy; {currentYear} <span className="notranslate">GrownK</span> Agency. All Rights Reserved.</p>
-          <div className="flex gap-6">
-            <a href="https://www.facebook.com/profile.php?id=61574323077446" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-gold)] transition-colors uppercase tracking-widest text-[0.7rem] font-bold no-underline text-[var(--text-dim)]">Facebook</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-gold)] transition-colors uppercase tracking-widest text-[0.7rem] font-bold no-underline text-[var(--text-dim)]">LinkedIn</a>
-            <a href="https://www.instagram.com/grownk_1/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-gold)] transition-colors uppercase tracking-widest text-[0.7rem] font-bold no-underline text-[var(--text-dim)]">Instagram</a>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,0.06)', gap: '16px' }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8125rem', color: '#64748B', margin: 0 }}>
+            &copy; {currentYear} <span className="notranslate">Ajanta Tech and Studio</span>. All Rights Reserved.
+          </p>
+          <div style={{ display: 'flex', gap: '24px' }}>
+            {['Facebook', 'LinkedIn', 'Instagram'].map((item, i) => (
+              <a key={i} href="#" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.05em', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={e => e.target.style.color = '#6366F1'} onMouseLeave={e => e.target.style.color = '#64748B'}>
+                {item}
+              </a>
+            ))}
           </div>
         </div>
       </div>

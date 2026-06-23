@@ -1,118 +1,233 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
+const CASES = [
+  {
+    metric: '14',
+    suffix: ' days',
+    label: 'Time to Market',
+    challenge: 'A tech consultancy needed a credible digital presence for their Series A round — in two weeks.',
+    resolution: 'We shipped a production-grade web platform with full design system, copywriting, and SEO architecture in 14 days.',
+  },
+  {
+    metric: '99.9',
+    suffix: '%',
+    label: 'Uptime SLA Delivered',
+    challenge: 'An enterprise client\'s legacy platform had recurring downtime incidents affecting 40,000 daily users.',
+    resolution: 'We rebuilt the infrastructure on a resilient cloud architecture. Uptime has held at 99.9% for 18 consecutive months.',
+  },
+  {
+    metric: '3×',
+    suffix: '',
+    label: 'Performance Improvement',
+    challenge: 'A growth-stage startup\'s React app scored 34 on Core Web Vitals — losing users on mobile before they ever engaged.',
+    resolution: 'After a full performance audit and rebuild, Lighthouse scores exceeded 95. Bounce rate dropped 42%.',
+  },
+  {
+    metric: '68',
+    suffix: '%',
+    label: 'Reduction in Operational Overhead',
+    challenge: 'A logistics company was managing 12 disconnected tools with 3 different teams maintaining separate data sources.',
+    resolution: 'We designed and shipped a unified internal platform that consolidated operations into a single, maintainable system.',
+  },
+];
 
 const Results = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  
-  const caseStudies = [
-    {
-      metric: "65",
-      suffix: "%",
-      label: "Increase in Media Visibility",
-      challenge: "An e-commerce brand struggling to break through market saturation.",
-      resolution: "Total Management unified their social narrative. Within 8 weeks, inbound traffic surged."
-    },
-    {
-      metric: "14",
-      suffix: " Days",
-      label: "To Market Launch",
-      challenge: "A tech consultancy needing an immediate digital footprint for Series A.",
-      resolution: "Manual Service deployed a premium web architecture communicating unassailable credibility."
-    },
-    {
-      metric: "3",
-      suffix: "x",
-      label: "ROAS on Meta Ads",
-      challenge: "A fashion retailer burning ad spend with zero conversions.",
-      resolution: "FB/IG Boosting Add-on restructured their targeting and creative, tripling return within 30 days."
-    },
-    {
-      metric: "95",
-      suffix: "%",
-      label: "Organic Traffic Growth",
-      challenge: "Over-reliance on paid ads eroding local service margins.",
-      resolution: "SEO Boosting restructured their site hierarchy, securing #1 local rankings in 3 months."
-    }
-  ];
-
-  const nextSlide = () => setActiveSlide((prev) => (prev + 1) % caseStudies.length);
-  const prevSlide = () => setActiveSlide((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
+  const [active, setActive] = useState(0);
+  const item = CASES[active];
 
   return (
-    <section className="py-24 px-0 relative bg-[var(--bg-dark)] border-t border-[rgba(255,255,255,0.03)]" id="impact">
-      <div className="max-w-[1200px] mx-auto px-[5%]">
-        <div className="text-center mb-16 reveal fade-up">
-          <p className="text-[0.75rem] uppercase tracking-[3px] text-[var(--accent-gold)] mb-6 font-semibold font-['Inter']">Chapter VI</p>
-          <h2 className="font-['Bebas_Neue'] text-[clamp(2.5rem,6vw,4rem)] text-[var(--text-main)] uppercase leading-none tracking-[1px] mb-6">
-            The <span className="text-[var(--accent-gold)]">Results</span>
+    <section
+      id="impact"
+      style={{
+        padding: '120px 0',
+        background: '#07080C',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+      }}
+    >
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+
+        {/* Header */}
+        <div style={{ maxWidth: '640px', marginBottom: '72px' }}>
+          <div className="overline" style={{ marginBottom: '20px' }}>Impact by the numbers</div>
+          <h2
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 'clamp(2rem, 5vw, 2.75rem)',
+              fontWeight: 700,
+              lineHeight: 1.1,
+              letterSpacing: '-0.02em',
+              color: '#F0F0F0',
+              marginBottom: '20px',
+            }}
+          >
+            The work speaks.{' '}
+            <span className="text-gradient-signature">The results confirm it.</span>
           </h2>
-          <p className="max-w-[700px] mx-auto text-[var(--text-muted)] text-[clamp(1rem,2vw,1.25rem)] leading-[1.6]">
-            A story is only as good as its ending. Here is the impact we've engineered for our partners.
+          <p
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '1.0625rem',
+              lineHeight: 1.7,
+              color: '#94A3B8',
+            }}
+          >
+            Case studies, not promises. Here is what precise engineering delivers.
           </p>
         </div>
 
-        {/* Carousel Container */}
-        <div className="relative max-w-[900px] mx-auto group">
-          <div className="overflow-hidden rounded-3xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-md">
-            <div 
-              className="flex transition-transform duration-700 cubic-bezier(0.23, 1, 0.32, 1)"
-              style={{ transform: `translateX(-${activeSlide * 100}%)` }}
-            >
-              {caseStudies.map((item, idx) => (
-                <div key={idx} className="w-full flex-shrink-0 p-8 md:p-16 text-center">
-                  <div className="flex flex-col items-center gap-6">
-                    <div className="flex flex-col items-center">
-                      <div className="font-['Bebas_Neue'] text-[4.5rem] md:text-[6.5rem] leading-none text-[var(--accent-gold)] drop-shadow-[0_0_30px_rgba(245,166,35,0.2)]">
-                        {item.metric}<span className="text-[0.5em]">{item.suffix}</span>
-                      </div>
-                      <div className="text-[0.8rem] uppercase tracking-[3px] text-[var(--text-dim)] mt-2 font-semibold">
-                        {item.label}
-                      </div>
-                    </div>
-                    
-                    <div className="w-12 h-px bg-[rgba(245,166,35,0.3)] my-4"></div>
-                    
-                    <div className="max-w-[600px] flex flex-col gap-4 text-[1.05rem] leading-[1.8] text-[var(--text-muted)]">
-                      <p>
-                        <strong className="text-[var(--text-main)] block mb-1 uppercase text-[0.8rem] tracking-[1px]">The Challenge</strong>
-                        {item.challenge}
-                      </p>
-                      <p>
-                        <strong className="text-[var(--accent-gold)] block mb-1 uppercase text-[0.8rem] tracking-[1px]">The Resolution</strong>
-                        {item.resolution}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Controls */}
-          <button 
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-[rgba(20,20,25,0.8)] border border-[rgba(255,255,255,0.1)] text-white flex items-center justify-center hover:bg-[var(--accent-gold)] hover:text-black transition-all duration-300 z-10 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-4 hidden md:flex"
-          >
-            <i className="ph-bold ph-arrow-left text-xl"></i>
-          </button>
-          <button 
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-[rgba(20,20,25,0.8)] border border-[rgba(255,255,255,0.1)] text-white flex items-center justify-center hover:bg-[var(--accent-gold)] hover:text-black transition-all duration-300 z-10 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-4 hidden md:flex"
-          >
-            <i className="ph-bold ph-arrow-right text-xl"></i>
-          </button>
-
-          {/* Dots */}
-          <div className="flex justify-center gap-2.5 mt-10">
-            {caseStudies.map((_, idx) => (
+        {/* Split Layout */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 2fr',
+            gap: '1px',
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.06)',
+            borderRadius: '12px',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Left: Case selector */}
+          <div style={{ background: '#0E1117' }}>
+            {CASES.map((c, idx) => (
               <button
                 key={idx}
-                onClick={() => setActiveSlide(idx)}
-                className={`h-1.5 transition-all duration-500 rounded-full ${activeSlide === idx ? 'w-8 bg-[var(--accent-gold)]' : 'w-2 bg-[rgba(255,255,255,0.2)]'}`}
-                aria-label={`Go to slide ${idx + 1}`}
-              ></button>
+                onClick={() => setActive(idx)}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  textAlign: 'left',
+                  padding: '24px 28px',
+                  background: active === idx ? '#161B26' : 'transparent',
+                  borderBottom: '1px solid rgba(255,255,255,0.06)',
+                  borderLeft: active === idx ? '2px solid #6366F1' : '2px solid transparent',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: '1.5rem',
+                    fontWeight: 500,
+                    color: active === idx ? '#818CF8' : '#374151',
+                    lineHeight: 1,
+                    marginBottom: '6px',
+                    transition: 'color 0.2s ease',
+                  }}
+                >
+                  {c.metric}{c.suffix}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: '0.8125rem',
+                    color: active === idx ? '#94A3B8' : '#374151',
+                    lineHeight: 1.4,
+                    transition: 'color 0.2s ease',
+                  }}
+                >
+                  {c.label}
+                </div>
+              </button>
             ))}
           </div>
+
+          {/* Right: Active case detail */}
+          <div
+            style={{
+              background: '#07080C',
+              padding: '56px 48px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
+            {/* Big number */}
+            <div
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 'clamp(4rem, 8vw, 6.5rem)',
+                fontWeight: 500,
+                lineHeight: 1,
+                color: 'transparent',
+                backgroundImage: 'linear-gradient(135deg, #818CF8 0%, #6EE7B7 100%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                marginBottom: '8px',
+              }}
+            >
+              {item.metric}{item.suffix}
+            </div>
+            <div className="overline" style={{ marginBottom: '40px', color: '#64748B' }}>
+              {item.label}
+            </div>
+
+            {/* Divider */}
+            <div
+              style={{
+                height: '1px',
+                background: 'rgba(255,255,255,0.06)',
+                marginBottom: '40px',
+              }}
+            />
+
+            {/* Challenge */}
+            <div style={{ marginBottom: '28px' }}>
+              <div
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: '#64748B',
+                  marginBottom: '10px',
+                }}
+              >
+                The Challenge
+              </div>
+              <p
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '1rem',
+                  lineHeight: 1.7,
+                  color: '#94A3B8',
+                }}
+              >
+                {item.challenge}
+              </p>
+            </div>
+
+            {/* Resolution */}
+            <div>
+              <div
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: '#10B981',
+                  marginBottom: '10px',
+                }}
+              >
+                What We Built
+              </div>
+              <p
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '1rem',
+                  lineHeight: 1.7,
+                  color: '#F0F0F0',
+                }}
+              >
+                {item.resolution}
+              </p>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
   );

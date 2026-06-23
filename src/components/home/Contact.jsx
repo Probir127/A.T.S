@@ -2,74 +2,261 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section className="py-24 px-0 relative bg-[var(--bg-dark)] border-t border-[rgba(255,255,255,0.03)]" id="contact">
-      <div className="max-w-[1200px] mx-auto px-[5%]">
-        <div className="text-center mb-16 reveal fade-up">
-          <p className="text-[0.75rem] uppercase tracking-[4px] text-[var(--accent-gold)] mb-6 font-semibold font-['Inter']">Resolution</p>
-          <div className="max-w-[850px] mx-auto">
-            <h2 className="font-['Bebas_Neue'] text-[clamp(2.5rem,7vw,5rem)] text-[var(--text-main)] uppercase leading-tight tracking-[1px]">
-              Ready to write the <span className="text-[#F5A623]">next chapter</span> of your brand's legacy?
-            </h2>
+    <section
+      id="contact"
+      style={{
+        padding: '120px 0',
+        background: '#0E1117',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+      }}
+    >
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+
+        {/* Header */}
+        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 72px auto' }}>
+          <div className="overline" style={{ marginBottom: '20px' }}>
+            Start a conversation
           </div>
+          <h2
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 'clamp(2.25rem, 5vw, 3.5rem)',
+              fontWeight: 700,
+              lineHeight: 1.1,
+              letterSpacing: '-0.02em',
+              color: '#F0F0F0',
+              marginBottom: '24px',
+            }}
+          >
+            What you're building{' '}
+            <span className="text-gradient-signature">deserves to exist.</span>
+          </h2>
+          <p
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '1.0625rem',
+              lineHeight: 1.7,
+              color: '#94A3B8',
+            }}
+          >
+            Every engagement begins with a scoping conversation — no commitment,
+            no sales pitch. Tell us what you're building and we'll tell you honestly
+            if we're the right fit.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col gap-8 reveal fade-up">
-            <p className="text-[clamp(1rem,2vw,1.3rem)] text-[var(--text-muted)] leading-[1.7] max-w-[550px]">
-              Strategic guidance is one conversation away. Let's discuss how we can transform your complex business into a compelling narrative that commands attention and market authority.
-            </p>
-            
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col gap-1.5 p-6 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] hover:border-[rgba(245,166,35,0.2)] transition-all duration-300">
-                <span className="text-[0.7rem] uppercase tracking-[2px] text-[var(--text-dim)] font-bold">Direct Inquiry</span>
-                <span className="text-[clamp(1.1rem,2vw,1.4rem)] text-[var(--accent-gold)] font-medium">
-                  <a href="mailto:agency.grownk@gmail.com?subject=Partnership%20Inquiry" className="hover:underline transition-all">
-                    agency.grownk@gmail.com
-                  </a>
+        {/* Two-column contact */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '1px',
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.06)',
+            borderRadius: '12px',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Left — Contact details */}
+          <div
+            style={{
+              background: '#07080C',
+              padding: '48px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '32px',
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: '#64748B',
+                  marginBottom: '10px',
+                }}
+              >
+                Email
+              </div>
+              <a
+                href="mailto:Studio.A.T.S@gmail.com?subject=Project Inquiry"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '1.0625rem',
+                  color: '#6366F1',
+                  textDecoration: 'none',
+                  fontWeight: 500,
+                  transition: 'color 0.2s ease',
+                }}
+                onMouseEnter={e => e.target.style.color = '#818CF8'}
+                onMouseLeave={e => e.target.style.color = '#6366F1'}
+              >
+                Studio.A.T.S@gmail.com
+              </a>
+            </div>
+
+            <div
+              style={{
+                height: '1px',
+                background: 'rgba(255,255,255,0.06)',
+              }}
+            />
+
+            <div>
+              <div
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: '#64748B',
+                  marginBottom: '10px',
+                }}
+              >
+                Office
+              </div>
+              <p
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '1rem',
+                  lineHeight: 1.7,
+                  color: '#94A3B8',
+                }}
+              >
+                House 02, Block B, Road 04<br />
+                Banasree, Rampura<br />
+                Dhaka 1219, Bangladesh
+              </p>
+            </div>
+
+            <div
+              style={{
+                height: '1px',
+                background: 'rgba(255,255,255,0.06)',
+              }}
+            />
+
+            <div>
+              <div
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: '#64748B',
+                  marginBottom: '10px',
+                }}
+              >
+                Response Time
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                }}
+              >
+                <span
+                  style={{
+                    display: 'inline-block',
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    background: '#10B981',
+                    animation: 'pulse-glow 2s ease-in-out infinite',
+                  }}
+                />
+                <span
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: '0.875rem',
+                    color: '#10B981',
+                  }}
+                >
+                  Within 24 hours
                 </span>
               </div>
-              
-              <div className="flex flex-col gap-1.5 p-6 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)]">
-                 <span className="text-[0.7rem] uppercase tracking-[2px] text-[var(--text-dim)] font-bold">Bangladeshi Office</span>
-                 <span className="text-[1rem] text-[var(--text-muted)] leading-relaxed">
-                   House: 02, Block: B, Road: 04,<br />
-                   Banasree, Rampura, Dhaka 1219
-                 </span>
-              </div>
             </div>
           </div>
 
-          <div className="reveal fade-up">
-            <div className="relative group overflow-hidden rounded-40 border border-[var(--accent-gold)] bg-[rgba(10,10,20,0.6)] backdrop-blur-3xl p-10 md:p-14 shadow-[0_0_80px_rgba(245,166,35,0.15)] text-center transition-all duration-500 hover:shadow-[0_0_100px_rgba(245,166,35,0.25)]">
-              {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-[var(--accent-gold)] opacity-5 blur-[80px] pointer-events-none"></div>
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-[rgba(0,243,255,0.1)] opacity-10 blur-[80px] pointer-events-none"></div>
-              
-              <div className="relative z-10 flex flex-col items-center gap-8">
-                <div className="w-24 h-24 rounded-full bg-[rgba(245,166,35,0.1)] text-[var(--accent-gold)] flex items-center justify-center text-5xl mb-2 animate-bounce-slow">
-                  <i className="ph-fill ph-whatsapp-logo"></i>
-                </div>
-                
-                <div className="flex flex-col gap-3">
-                  <h3 className="font-['Bebas_Neue'] text-[2.5rem] text-[var(--text-main)] tracking-[1px]">Message Us Directly</h3>
-                  <p className="text-[var(--text-muted)] text-[1.05rem] leading-[1.6] max-w-[350px]">
-                    Skip the forms. Message us on WhatsApp to start building your stack immediately. 
-                  </p>
-                </div>
+          {/* Right — CTA panel */}
+          <div
+            style={{
+              background: '#07080C',
+              padding: '48px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'flex-start',
+              gap: '32px',
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
+            {/* Ambient background glow */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '-40px',
+                right: '-40px',
+                width: '300px',
+                height: '300px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 65%)',
+                pointerEvents: 'none',
+              }}
+            />
 
-                <a 
-                  href="https://wa.me/8801611510192" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full btn-primary py-4 px-10 text-[1.1rem] tracking-[1px] font-['Bebas_Neue'] rounded-xl bg-[var(--accent-gold)] text-black border border-[var(--accent-gold)] hover:bg-transparent hover:text-[var(--accent-gold)] transition-all duration-300 flex items-center justify-center gap-3 active:scale-95 shadow-lg"
-                >
-                  <i className="ph-bold ph-chat-circle-text"></i>
-                  Message on WhatsApp
-                </a>
-              </div>
+            <div>
+              <h3
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontSize: '1.75rem',
+                  fontWeight: 600,
+                  color: '#F0F0F0',
+                  letterSpacing: '-0.01em',
+                  marginBottom: '16px',
+                }}
+              >
+                Prefer a direct conversation?
+              </h3>
+              <p
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '1rem',
+                  lineHeight: 1.65,
+                  color: '#94A3B8',
+                }}
+              >
+                Message us on WhatsApp. Share your brief, timeline, and team size —
+                we'll respond with an honest assessment.
+              </p>
             </div>
+
+            <a
+              href="https://wa.me/8801611510192"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ fontSize: '0.875rem' }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.51 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.22 13.44 13.86 13.93 13.68 14.14C13.5 14.36 13.32 14.38 13.07 14.27C12.82 14.17 12.05 13.91 11.13 13.1C10.41 12.46 9.90 11.67 9.76 11.43C9.62 11.19 9.73 11.06 9.85 10.94C9.96 10.82 10.10 10.64 10.22 10.5C10.35 10.36 10.39 10.25 10.47 10.07C10.55 9.89 10.51 9.73 10.44 9.61C10.38 9.5 9.9 8.27 9.69 7.79C9.5 7.33 9.29 7.35 9.12 7.34C8.95 7.33 8.78 7.33 8.53 7.33Z"/>
+              </svg>
+              Message on WhatsApp
+            </a>
+
+            <a href="/contact" className="btn-ghost">
+              Or use the contact form →
+            </a>
           </div>
         </div>
+
       </div>
     </section>
   );

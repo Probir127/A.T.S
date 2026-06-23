@@ -47,8 +47,8 @@ const Addons = ({ selectedServices, toggleService }) => {
     <section className="py-20 px-0 relative bg-[var(--bg-dark)] border-t border-[rgba(255,255,255,0.03)]">
       <div className="max-w-[1200px] mx-auto px-[5%]">
         <div className="text-center mb-12 reveal fade-up">
-          <h3 className="font-['Bebas_Neue'] text-[clamp(2rem,5vw,3rem)] text-[var(--text-main)] uppercase tracking-[1px] mb-4">
-            Targeted <span className="text-[var(--accent-gold)]">Artillery</span> (Add-ons)
+          <h3 className="font-['Space_Grotesk'] text-[clamp(2rem,5vw,3rem)] text-[var(--text-main)] uppercase tracking-[1px] mb-4">
+            Targeted <span className="text-[var(--accent-primary)]">Artillery</span> (Add-ons)
           </h3>
           <p className="max-w-[650px] mx-auto text-[var(--text-muted)] text-[0.95rem]">
             Deploy specific tactical units to reinforce your core ecosystem. 
@@ -72,21 +72,21 @@ const Addons = ({ selectedServices, toggleService }) => {
               <div 
                 key={id}
                 onClick={() => toggleService(id)}
-                className={`flex-shrink-0 w-[85vw] md:w-auto snap-center group relative rounded-[20px] border p-6 pb-20 flex flex-col gap-4 transition-all duration-350 ease-out cursor-pointer overflow-hidden box-border hover:-translate-y-1 ${selectedClass} hover:border-[rgba(245,166,35,0.35)] hover:shadow-[0_0_40px_rgba(245,166,35,0.08)]`}
+                className={`flex-shrink-0 w-[85vw] md:w-auto snap-center group relative rounded-[20px] border p-6 pb-20 flex flex-col gap-4 transition-all duration-350 ease-out cursor-pointer overflow-hidden box-border hover:-translate-y-1 ${selectedClass} hover:border-[rgba(124, 58, 237,0.35)] hover:shadow-[0_0_40px_rgba(124, 58, 237,0.08)]`}
               >
                 {/* Selection Overlay */}
-                <div className={`absolute top-4 left-4 flex items-center gap-1.5 bg-[rgba(245,166,35,0.15)] text-[var(--accent-gold)] border border-[rgba(245,166,35,0.3)] rounded-[20px] text-[0.65rem] px-3 py-1 font-['Bebas_Neue'] tracking-[1px] transition-all duration-250 pointer-events-none ${isSelected ? 'opacity-100 scale-100' : 'opacity-0 scale-80'}`}>
+                <div className={`absolute top-4 left-4 flex items-center gap-1.5 bg-[rgba(124, 58, 237,0.15)] text-[var(--accent-primary)] border border-[rgba(124, 58, 237,0.3)] rounded-[20px] text-[0.65rem] px-3 py-1 font-['Space_Grotesk'] tracking-[1px] transition-all duration-250 pointer-events-none ${isSelected ? 'opacity-100 scale-100' : 'opacity-0 scale-80'}`}>
                   <i className="ph-bold ph-check"></i> Added
                 </div>
 
                 {/* Icon */}
-                <div className="w-[48px] h-[48px] rounded-[12px] bg-[rgba(245,166,35,0.1)] text-[var(--accent-gold)] flex items-center justify-center text-xl flex-shrink-0">
+                <div className="w-[48px] h-[48px] rounded-[12px] bg-[rgba(124, 58, 237,0.1)] text-[var(--accent-primary)] flex items-center justify-center text-xl flex-shrink-0">
                   <i className={svc.icon}></i>
                 </div>
 
                 {/* Content */}
                 <div className="flex flex-col gap-2 flex-grow min-w-0">
-                  <h4 className="font-['Bebas_Neue'] text-[1.4rem] text-[var(--text-main)] m-0 tracking-[0.5px] uppercase truncate">{svc.name}</h4>
+                  <h4 className="font-['Space_Grotesk'] text-[1.4rem] text-[var(--text-main)] m-0 tracking-[0.5px] uppercase truncate">{svc.name}</h4>
                   <p className="text-[0.85rem] text-[var(--text-muted)] leading-[1.5] m-0">
                     {id === 'addon_fbig' && 'Tactical ad deployment across Meta platforms to capture high-intent audiences.'}
                     {id === 'addon_web' && 'Bespoke digital architecture built for high conversion and premium storytelling.'}
@@ -100,12 +100,12 @@ const Addons = ({ selectedServices, toggleService }) => {
                 {/* Pricing info - simple for addons */}
                 <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-[rgba(255,255,255,0.06)] flex-shrink-0">
                   <span className="text-[0.65rem] uppercase tracking-[1.5px] text-[var(--text-dim)]">Starting At</span>
-                  <span className="font-['Bebas_Neue'] text-[1.4rem] text-[var(--accent-gold)]">{svc.price[currency]}</span>
+                  <span className="font-['Space_Grotesk'] text-[1.4rem] text-[var(--accent-primary)]">{svc.price[currency]}</span>
                 </div>
 
                 {/* Button */}
                 <button 
-                  className={`absolute bottom-5 left-5 right-5 flex items-center justify-center gap-2 py-2.5 rounded-lg border font-['Bebas_Neue'] text-[0.85rem] tracking-[1px] transition-all duration-300 transform active:scale-95 ${isSelected ? 'bg-[rgba(255,255,255,0.05)] text-[var(--text-muted)] border-[rgba(255,255,255,0.12)]' : 'bg-transparent text-[var(--accent-gold)] border border-[var(--accent-gold)] hover:bg-white hover:text-black hover:border-white'}`}
+                  className={`absolute bottom-5 left-5 right-5 flex items-center justify-center gap-2 py-2.5 rounded-lg border font-['Space_Grotesk'] text-[0.85rem] tracking-[1px] transition-all duration-300 transform active:scale-95 ${isSelected ? 'bg-[rgba(255,255,255,0.05)] text-[var(--text-muted)] border-[rgba(255,255,255,0.12)]' : 'bg-transparent text-[var(--accent-primary)] border border-[var(--accent-primary)] hover:bg-white hover:text-black hover:border-white'}`}
                 >
                   <i className={`ph-bold ${isSelected ? 'ph-check' : 'ph-plus-circle'}`}></i>
                   <span>{isSelected ? 'Remove' : 'Add to Stack'}</span>

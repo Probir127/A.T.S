@@ -1,21 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#F5C842;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#F5A623;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#D4900F;stop-opacity:1" />
+    <!-- Left leg gradient: Purple to Blue -->
+    <linearGradient id="leftStemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Right leg gradient: Blue to Emerald -->
+    <linearGradient id="rightStemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06D6A0;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Center diamond/prism gradient: Amber to Purple -->
+    <linearGradient id="crossbarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Subtle border gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#06D6A0;stop-opacity:0.6" />
     </linearGradient>
   </defs>
+
   <!-- Dark square background with rounded corners -->
-  <rect width="512" height="512" fill="#000000" rx="64"/>
+  <rect width="512" height="512" rx="120" fill="#08090D"/>
   
-  <!-- Full GROWNK text, stretched to match the logo proportions -->
-  <text x="256" y="300" text-anchor="middle" textLength="460" lengthAdjust="spacingAndGlyphs" font-family="Impact, Arial Black, sans-serif" font-weight="bold" font-size="140">
-    <tspan fill="#FFFFFF">GROWN</tspan><tspan fill="url(#goldGrad)">K</tspan>
-  </text>
-  
-  <!-- Small sparkle accent -->
-  <g transform="translate(450, 310) scale(0.8)" fill="#F5A623" opacity="0.9">
-    <polygon points="12,0 14.5,9.5 24,12 14.5,14.5 12,24 9.5,14.5 0,12 9.5,9.5"/>
-  </g>
+  <!-- Glowing border -->
+  <rect width="500" height="500" x="6" y="6" rx="114" fill="none" stroke="url(#borderGrad)" stroke-width="8"/>
+
+  <!-- Left Stem of "A" -->
+  <polygon points="120,390 200,390 251,180 251,120" fill="url(#leftStemGrad)"/>
+
+  <!-- Right Stem of "A" -->
+  <polygon points="392,390 312,390 261,180 261,120" fill="url(#rightStemGrad)"/>
+
+  <!-- Center Diamond (floating prism crossbar) -->
+  <polygon points="256,230 300,280 256,330 212,280" fill="url(#crossbarGrad)" filter="drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.5))"/>
+
+  <!-- Subtle tech dot accents -->
+  <circle cx="256" cy="75" r="8" fill="#7C3AED" opacity="0.8"/>
+  <circle cx="120" cy="420" r="4" fill="#7C3AED" opacity="0.4"/>
+  <circle cx="392" cy="420" r="4" fill="#06D6A0" opacity="0.4"/>
 </svg>
