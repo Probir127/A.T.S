@@ -144,7 +144,7 @@ const Services = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
             gap: '1px',
             background: 'rgba(255,255,255,0.06)',
             border: '1px solid rgba(255,255,255,0.06)',
@@ -197,7 +197,6 @@ const ServiceCard = ({ svc, isAI }) => {
         background: '#07080C',
         transition: 'background 0.25s ease',
         cursor: 'default',
-        gridColumn: isAI ? 'span 2' : 'span 1',
       }}
       onMouseEnter={e => {
         e.currentTarget.style.background = '#0E1117';
@@ -206,79 +205,72 @@ const ServiceCard = ({ svc, isAI }) => {
         e.currentTarget.style.background = '#07080C';
       }}
     >
-      <div style={{ display: isAI ? 'flex' : 'block', gap: '32px', alignItems: 'flex-start' }}>
-        {/* Icon */}
-        <div
-          style={{
-            width: isAI ? '64px' : '48px',
-            height: isAI ? '64px' : '48px',
-            minWidth: isAI ? '64px' : '48px',
-            borderRadius: '10px',
-            background: 'rgba(99,102,241,0.08)',
-            border: '1px solid rgba(99,102,241,0.15)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#818CF8',
-            marginBottom: isAI ? '0' : '24px',
-            flexShrink: 0,
-            fontSize: isAI ? '32px' : '24px',
-          }}
-        >
-          {svc.icon}
-        </div>
+      {/* Icon */}
+      <div
+        style={{
+          width: '48px',
+          height: '48px',
+          borderRadius: '10px',
+          background: 'rgba(99,102,241,0.08)',
+          border: '1px solid rgba(99,102,241,0.15)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#818CF8',
+          marginBottom: '24px',
+          flexShrink: 0,
+        }}
+      >
+        {svc.icon}
+      </div>
 
-        {/* Content */}
-        <div style={{ flex: 1 }}>
-          {/* Title */}
-          <h3
+      {/* Title */}
+      <h3
+        style={{
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontSize: '1.1875rem',
+          fontWeight: 600,
+          lineHeight: 1.25,
+          color: '#F0F0F0',
+          marginBottom: '12px',
+          letterSpacing: '-0.01em',
+        }}
+      >
+        {svc.title}
+      </h3>
+
+      {/* Description */}
+      <p
+        style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '0.9375rem',
+          lineHeight: 1.65,
+          color: '#64748B',
+          marginBottom: '24px',
+        }}
+      >
+        {svc.desc}
+      </p>
+
+      {/* Tags */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+        {svc.tags.map(tag => (
+          <span
+            key={tag}
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: isAI ? '1.5rem' : '1.1875rem',
-              fontWeight: 600,
-              lineHeight: 1.25,
-              color: '#F0F0F0',
-              marginBottom: '12px',
-              letterSpacing: '-0.01em',
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: '0.6875rem',
+              letterSpacing: '0.06em',
+              color: '#10B981',
+              background: 'rgba(16,185,129,0.08)',
+              border: '1px solid rgba(16,185,129,0.15)',
+              borderRadius: '4px',
+              padding: '4px 10px',
             }}
           >
-            {svc.title}
-          </h3>
-
-          {/* Description */}
-          <p
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '0.9375rem',
-              lineHeight: 1.65,
-              color: '#64748B',
-              marginBottom: '24px',
-            }}
-          >
-            {svc.desc}
-          </p>
-
-          {/* Tags */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-            {svc.tags.map(tag => (
-              <span
-                key={tag}
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: '0.6875rem',
-                  letterSpacing: '0.06em',
-                  color: '#10B981',
-                  background: 'rgba(16,185,129,0.08)',
-                  border: '1px solid rgba(16,185,129,0.15)',
-                  borderRadius: '4px',
-                  padding: '4px 10px',
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
+            {tag}
+          </span>
+        ))}
       </div>
     </div>
   );
