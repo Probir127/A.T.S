@@ -28,7 +28,7 @@ const Career = () => {
   ];
 
   return (
-    <div className="bg-[#07080C] text-[var(--text-main)] min-h-screen pt-32 pb-24">
+    <div className="bg-[var(--bg-dark)] text-[var(--text-main)] min-h-screen pt-32 pb-24">
       <SEO 
         title="Careers - Join the Team" 
         description="Join the A.T.S team. We're building the future of digital growth architecture." 
@@ -37,9 +37,9 @@ const Career = () => {
       <div className="max-w-[1200px] mx-auto px-[5%]">
         {/* Header */}
         <div className="mb-20">
-          <p className="text-[0.75rem] uppercase tracking-[4px] text-[var(--accent-primary)] mb-6 font-semibold font-['Inter']">Careers</p>
-          <h1 className="font-['Space_Grotesk'] text-[clamp(3rem,8vw,5.5rem)] leading-none uppercase tracking-[1px] mb-6">
-            Join the <span className="text-[var(--accent-primary)]">Team</span>
+          <p className="text-[0.75rem] uppercase tracking-[4px] text-[var(--color-indigo)] mb-6 font-semibold">Careers</p>
+          <h1 className="font-['Space_Grotesk'] text-[clamp(2.5rem,7vw,5.5rem)] leading-none uppercase tracking-[-0.02em] mb-6">
+            Join the <span className="text-[var(--color-indigo)]">Team</span>
           </h1>
           <p className="text-[clamp(1rem,2vw,1.3rem)] text-[var(--text-muted)] leading-[1.7] max-w-[650px]">
             We're building the future of digital growth architecture. If you're driven by results and obsessed with craft, you might belong here.
@@ -48,15 +48,15 @@ const Career = () => {
 
         {/* Culture & Values */}
         <div className="mb-24">
-          <h2 className="font-['Space_Grotesk'] text-[2.5rem] tracking-[1px] uppercase mb-10">Our <span className="text-[var(--accent-primary)]">Values</span></h2>
+          <h2 className="font-['Space_Grotesk'] text-[2.5rem] tracking-[-0.02em] uppercase mb-10">Our <span className="text-[var(--color-indigo)]">Values</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, i) => (
               <div key={i} className="p-8 rounded-2xl border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] flex gap-6 items-start">
-                <div className="w-14 h-14 rounded-2xl bg-[rgba(99,102,241,0.08)] text-[var(--accent-primary)] flex items-center justify-center text-2xl border border-[rgba(99,102,241,0.1)] flex-shrink-0">
+                <div className="w-14 h-14 rounded-2xl bg-[rgba(99,102,241,0.08)] text-[var(--color-indigo)] flex items-center justify-center text-2xl border border-[rgba(99,102,241,0.1)] flex-shrink-0">
                   <i className={value.icon}></i>
                 </div>
                 <div>
-                  <h3 className="font-['Space_Grotesk'] text-[1.6rem] tracking-[0.5px] mb-2">{value.title}</h3>
+                  <h3 className="font-['Space_Grotesk'] text-[1.6rem] tracking-[-0.02em] mb-2">{value.title}</h3>
                   <p className="text-[1rem] text-[var(--text-muted)] leading-[1.7]">{value.desc}</p>
                 </div>
               </div>
@@ -66,7 +66,7 @@ const Career = () => {
 
         {/* Open Roles */}
         <div className="mb-24">
-          <h2 className="font-['Space_Grotesk'] text-[2.5rem] tracking-[1px] uppercase mb-10">Open <span className="text-[var(--accent-primary)]">Roles</span></h2>
+          <h2 className="font-['Space_Grotesk'] text-[2.5rem] tracking-[-0.02em] uppercase mb-10">Open <span className="text-[var(--color-indigo)]">Roles</span></h2>
           
           {openRoles.length > 0 ? (
             <div className="flex flex-col gap-6">

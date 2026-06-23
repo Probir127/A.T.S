@@ -5,13 +5,13 @@ import SEO from '../components/SEO';
 // --- Sub-components (outside for performance) ---
 
 const SectionTitle = ({ number, title }) => (
-  <h2 className="font-['Space_Grotesk'] text-[2.2rem] text-white tracking-[2px] mb-6 border-b border-white/10 pb-2 uppercase text-left w-full policy-reveal">
+  <h2 className="font-['Space_Grotesk'] text-[2.2rem] text-white tracking-[-0.02em] mb-6 border-b border-white/10 pb-2 uppercase text-left w-full policy-reveal">
     {number}. {title}
   </h2>
 );
 
 const SubTitle = ({ title }) => (
-  <h3 className="font-['Space_Grotesk'] text-[1.5rem] text-[var(--accent-primary)] tracking-[1px] mb-4 mt-8 uppercase policy-reveal">
+  <h3 className="font-['Space_Grotesk'] text-[1.5rem] text-[var(--color-indigo)] tracking-[-0.02em] mb-4 mt-8 uppercase policy-reveal">
     {title}
   </h3>
 );

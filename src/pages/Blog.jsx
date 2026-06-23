@@ -34,7 +34,7 @@ const Blog = () => {
   ];
 
   return (
-    <div className="bg-[#07080C] text-[var(--text-main)] min-h-screen pt-32 pb-24">
+    <div className="bg-[var(--bg-dark)] text-[var(--text-main)] min-h-screen pt-32 pb-24">
       <SEO 
         title="The Blog - Insights & Strategy" 
         description="Strategic insights, tactical breakdowns, and growth narratives from the A.T.S team." 
@@ -42,11 +42,11 @@ const Blog = () => {
       />
       <div className="max-w-[1200px] mx-auto px-[5%]">
         <div className="mb-16">
-          <p className="text-[0.75rem] uppercase tracking-[4px] text-[var(--accent-primary)] mb-6 font-semibold font-['Inter']">Insights</p>
-          <h1 className="font-['Space_Grotesk'] text-[clamp(3rem,8vw,5.5rem)] leading-none uppercase tracking-[1px] mb-6">
-            The <span className="text-[var(--accent-primary)]">Blog</span>
+          <p className="text-[0.75rem] uppercase tracking-[4px] text-[var(--color-indigo)] mb-6 font-semibold">Insights</p>
+          <h1 className="font-['Space_Grotesk'] text-[clamp(2.5rem,7vw,5.5rem)] leading-none uppercase tracking-[-0.02em] mb-6">
+            The <span className="text-[var(--color-indigo)]">Blog</span>
           </h1>
-          <p className="text-[clamp(1rem,2vw,1.3rem)] text-[var(--text-muted)] leading-[1.7] max-w-[600px]">
+          <p className="text-[clamp(1rem,2vw,1.3rem)] text-[var(--text-muted)] leading-[1.7] max-w-[650px]">
             Strategic insights, tactical breakdowns, and growth narratives from the A.T.S team.
           </p>
         </div>

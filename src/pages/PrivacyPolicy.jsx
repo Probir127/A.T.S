@@ -5,18 +5,18 @@ import SEO from '../components/SEO';
 // Reusable Sub-components (Polished outside of render)
 const SectionSeparator = ({ title }) => (
   <div className="flex items-center justify-center gap-6 my-20 privacy-fade-up">
-    <div className="h-[1px] grow bg-gradient-to-r from-transparent to-[var(--accent-primary)] opacity-20"></div>
-    <h2 className="font-['Space_Grotesk'] text-[1.5rem] tracking-[4px] text-[var(--accent-primary)] uppercase whitespace-nowrap">
+    <div className="h-[1px] grow bg-gradient-to-r from-transparent to-[var(--color-indigo)] opacity-20"></div>
+    <h2 className="font-['Space_Grotesk'] text-[1.5rem] tracking-[4px] text-[var(--color-indigo)] uppercase whitespace-nowrap">
       — {title} —
     </h2>
-    <div className="h-[1px] grow bg-gradient-to-l from-transparent to-[var(--accent-primary)] opacity-20"></div>
+    <div className="h-[1px] grow bg-gradient-to-l from-transparent to-[var(--color-indigo)] opacity-20"></div>
   </div>
 );
 
 const PolicySection = ({ number, title, children }) => (
   <section className="privacy-fade-up mb-12">
-    <h3 className="font-['Space_Grotesk'] text-[2.2rem] text-[var(--text-main)] tracking-[1.5px] mb-6 flex items-baseline gap-4">
-      <span className="text-[var(--accent-primary)] opacity-50 text-[1.5rem]">{number}.</span>
+    <h3 className="font-['Space_Grotesk'] text-[2.2rem] text-[var(--text-main)] tracking-[-0.02em] mb-6 flex items-baseline gap-4">
+      <span className="text-[var(--color-indigo)] opacity-50 text-[1.5rem]">{number}.</span>
       {title}
     </h3>
     <div className="text-[1.1rem] leading-[1.8] text-[var(--text-muted)] space-y-4">

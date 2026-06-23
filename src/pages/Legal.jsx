@@ -5,8 +5,8 @@ const Legal = ({ title }) => {
     <div className="bg-[var(--bg-dark)] text-[var(--text-main)] min-h-screen pt-32 pb-24">
       <div className="max-w-[800px] mx-auto px-[5%]">
         <div className="mb-16">
-          <p className="text-[0.8rem] uppercase tracking-[4px] text-[var(--accent-primary)] font-bold mb-6">Compliance</p>
-          <h1 className="font-['Space_Grotesk'] text-[clamp(2.5rem,6vw,4rem)] leading-none uppercase tracking-[1px] mb-8">
+          <p className="text-[0.8rem] uppercase tracking-[4px] text-[var(--color-indigo)] font-bold mb-6">Compliance</p>
+          <h1 className="font-['Space_Grotesk'] text-[clamp(2.5rem,6vw,4rem)] leading-none uppercase tracking-[-0.02em] mb-8">
             {title}
           </h1>
           <p className="text-[1.1rem] text-[var(--text-muted)] opacity-80 leading-relaxed italic">
